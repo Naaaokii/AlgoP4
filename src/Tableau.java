@@ -27,8 +27,9 @@ public class Tableau {
     }
     
     public void displayGrid() {
-        for (int chap = 1 ; chap < COLONNES+1 ; chap++){
-            System.out.print(" " + chap + " " );
+        System.out.println("\n"); // Sauter une ligne
+        for (int numeroColonnes = 1 ; numeroColonnes < COLONNES + 1 ; numeroColonnes++){
+            System.out.print(" " + numeroColonnes + " " );
         }
         System.out.println();
         for (int tour = 0; tour < COLONNES + 2 * COLONNES; tour++)

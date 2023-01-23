@@ -7,15 +7,8 @@ public class App {
 
         Tableau monTableau = new Tableau();
         monTableau.displayGrid();
-        // Pion mypion = new Pion(monTableau);
         Pion Pion = new Pion(monTableau);
 
-        // int colonne = 6;
-        // colonne--;
-        // Pion.ajouterPion(colonneonne);
-        // monTableau.displayTableau();
-        // Pion.ajouterPion(colonneonne);
-        // monTableau.displayTableau();
         Victoire verifVictoire = new Victoire(monTableau);
         int joueurActuel = 1;
         Joueur joueur = new Joueur();
