@@ -27,6 +27,24 @@ public class Menu {
                                         switch (choix2) {
                                             case "1":
                                                 Blanc();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    ChoixSymbole();
+                                                        Symbole1();
+                                                    break;
+                                                    case "2":
+                                                        Symbole2();
+                                                    break;
+                                                    case "3":
+                                                        Symbole3();
+                                                    break;
+                                                    case "4":
+                                                        Symbole4();
+                                                    break;
+                                                    case "5":
+                                                        Symbole5();
+                                                    break;
+                                                }
                                             break;
                                             case "2":
                                                 Bleu();
@@ -79,6 +97,52 @@ public class Menu {
         
         
         
+        private static void Symbole5() {
+        }
+
+
+
+
+        private static void Symbole4() {
+        }
+
+
+
+
+        private static void Symbole3() {
+        }
+
+
+
+
+        private static void Symbole2() {
+        }
+
+
+
+
+        private static void Symbole1() {
+        }
+
+
+
+
+        private static void ChoixSymbole() {
+            ArrayList<String> menus = new ArrayList<>();
+            menus.add("\033[37mJoueur 1 choisissez votre symbole");
+            menus.add("1- @");
+            menus.add("2- =");
+            menus.add("3- &");
+            menus.add("3- $");
+            menus.add("3- €");
+            for (String menu : menus) {
+                System.out.println(menu);
+            }
+        }
+
+
+
+
         private static void afficherMenu() {
             ArrayList<String> menus = new ArrayList<>();
             menus.add("\033[37m     MENU");
@@ -109,7 +173,7 @@ public class Menu {
         }
 
         private static void Classement() {
-            
+
         }
         
         private static void JcJ() {
