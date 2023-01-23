@@ -1,3 +1,3 @@
-public class plateau {
+public class Plateau {
     
 }
