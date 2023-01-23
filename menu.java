@@ -21,6 +21,38 @@ public class Menu {
                         switch (choix2) {
                             case "1":
                                 JcJ();
+                                switch (choix2) {
+                                    case "1":
+                                        choixClouleur1();
+                                        switch (choix2) {
+                                            case "1":
+                                                Blanc();
+                                            break;
+                                            case "2":
+                                                Bleu();
+                                            break;
+                                            case "3":
+                                                Violet();
+                                            break;
+                                            case "4":
+                                                Vert();
+                                            break;
+                                            case "5":
+                                                Jaune();
+                                            break;
+                                            case "q":
+                                                switch (choix2){};
+                                            default:
+                                                System.out.println("Mauvaise touche");
+                                                break;
+                                        }
+                                    break;
+                                    case "q":
+                                        switch (choix){};
+                                    default:
+                                        System.out.println("Mauvaise touche");
+                                        break;
+                                }
                             break;
                             case "2":
                                 JcIA();
@@ -43,6 +75,7 @@ public class Menu {
                 }
             }
         }
+        
         
         private static void afficherMenu() {
             ArrayList<String> menus = new ArrayList<>();
@@ -74,15 +107,15 @@ public class Menu {
         }
         
         private static void JcJ() {
-
+            
             System.out.println("\033[37m Saisir le nom du joueur 1 :");
             String joueur1 = _scan.nextLine();
             System.out.println("\033[37m Saisir le nom du joueur 2 :");
             String joueur2 = _scan.nextLine();
             choixClouleur1();
-
+            
         }
-    
+        
         private static void JcIA() {
             System.out.println("\033[37m Saisir le nom du joueur :");
             String joueur = _scan.nextLine();
@@ -97,16 +130,30 @@ public class Menu {
             String choix = _scan.nextLine();
             ArrayList<String> menusC = new ArrayList<>();
             menusC.add(" Choisissez la couleur du joueur 1");
-            menusC.add("\033[37mBlanc\033[37m");
-            menusC.add("\033[36mBleu\033[37m");
-            menusC.add("\033[35mViolet\033[37m");
-            menusC.add("\033[32mVert\033[37m");
-            menusC.add("\033[33mJaune\033[37m");
+            menusC.add("\033[37m1- Blanc\033[37m");
+            menusC.add("\033[36m2- Bleu\033[37m");
+            menusC.add("\033[35m3- Violet\033[37m");
+            menusC.add("\033[32m4- Vert\033[37m");
+            menusC.add("\033[33m5- Jaune\033[37m");
             menusC.add("q- Retour");
             for (String menu : menusC) {
                 System.out.println(menu);
             }
         }
         
+        private static void Jaune() {
+        }
+    
+        private static void Vert() {
+        }
+    
+        private static void Violet() {
+        }
+    
+        private static void Bleu() {
+        }
+    
+        private static void Blanc() {
+        }
     }
     
