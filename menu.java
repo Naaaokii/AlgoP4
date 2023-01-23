@@ -64,9 +64,9 @@ public class Menu {
                                 break;
                         }
                         break;
-                    /*case "2":
-                        Settings();
-                        break;*/
+                    case "2":
+                        Classement();
+                        break;
                     case "q":
                         return;
                     default:
@@ -77,11 +77,13 @@ public class Menu {
         }
         
         
+        
+        
         private static void afficherMenu() {
             ArrayList<String> menus = new ArrayList<>();
             menus.add("\033[37m     MENU");
             menus.add("1- Jouer");
-            /*menus.add("2- Settings");*/
+            menus.add("2- Classement");
             menus.add("q- Quitter");
             for (String menu : menus) {
                 System.out.println(menu);
@@ -104,6 +106,10 @@ public class Menu {
             for (String menu : menus) {
                 System.out.println(menu);
             }
+        }
+
+        private static void Classement() {
+            
         }
         
         private static void JcJ() {
