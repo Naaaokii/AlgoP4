@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
-public class Menu {
+/*public class Menu {
     private static Scanner _scan = new Scanner(System.in);
     
         public static void main(String[] args) throws Exception {
@@ -898,9 +898,6 @@ public class Menu {
         }
         
         private static void Jouer() {
-            /*System.out.println("Choisissez le nombre de joueur");
-            menus.add("1- 1 joueur");
-            menus.add("2- 2 joueurs");*/
             ArrayList<String> menus = new ArrayList<>();
             menus.add("\033[37m Choisissez le mode de jeu");
             menus.add("1- Joueur contre Joueur");
@@ -934,18 +931,6 @@ public class Menu {
         }
         
         private static void choixClouleur1(){
-            /*String choix = _scan.nextLine();
-            ArrayList<String> menusC = new ArrayList<>();
-            menusC.add(" Choisissez la couleur du joueur 1");
-            menusC.add("\033[37m1- Blanc\033[37m");
-            menusC.add("\033[36m2- Bleu\033[37m");
-            menusC.add("\033[35m3- Violet\033[37m");
-            menusC.add("\033[32m4- Vert\033[37m");
-            menusC.add("\033[33m5- Jaune\033[37m");
-            menusC.add("q- Retour");
-            for (String menu : menusC) {
-                System.out.println(menu);
-            }*/
             System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
             System.out.println("\033[37m1- Blanc\033[37m");
             System.out.println("\033[36m2- Bleu\033[37m");
@@ -966,16 +951,6 @@ public class Menu {
         }
         
         private static void ChoixSymbole1() {
-            /*ArrayList<String> menus = new ArrayList<>();
-            menus.add("\033[37mJoueur 1 choisissez votre symbole");
-            menus.add("1- @");
-            menus.add("2- =");
-            menus.add("3- &");
-            menus.add("3- $");
-            menus.add("3- €");
-            for (String menu : menus) {
-                System.out.println(menu);
-            }*/
             System.out.println("\033[37m Choix du symbole du Joueur 1 :");
             System.out.println("1- @");
             System.out.println("2- =");
@@ -994,4 +969,4 @@ public class Menu {
             System.out.println("5- €");
             String choixSymb2 = _scan.nextLine();
         }
-    }   
+    }  */  
