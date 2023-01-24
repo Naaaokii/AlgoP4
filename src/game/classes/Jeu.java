@@ -6,7 +6,7 @@ public class Jeu {
      */
     final int NB_COLONNES = 7;
     final int NB_LIGNES = 6;
-    Case[][] plateau; // Case[2][3] = colonne, 3è ligne
+    Case[][] plateau; // Case[2][3] = 2ème colonne, 3ème ligne
 
 
     /*
@@ -138,18 +138,3 @@ public class Jeu {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

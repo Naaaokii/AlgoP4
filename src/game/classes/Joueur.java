@@ -40,7 +40,7 @@ public class Joueur {
     /**
      * Place une pièce dans la grille.
      * @param nColonne Colonne à laquelle placer la pièce.
-     * @return true si pièce placée, false si pas de case dispo.
+     * @return true si pion placé, false si pas de case dispo.
      */
     public boolean placePion(char nColonne){
 

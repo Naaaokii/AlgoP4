@@ -1,12 +1,13 @@
 package game.classes;
 
 public class Pion {
+
     protected Joueur joueur;
     protected String couleur;
     protected Case laCase;
 
 
-    public Case getLaCase() {
+    public Case getLaCase(){
         return laCase;
     }
 

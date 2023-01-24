@@ -193,7 +193,7 @@ public class Ia extends Joueur {
 
     /**
      * Simule le placement d'une pièce de l'adversaire.
-     * @param nColonne Colonne où placer une "fausse pièce"
+     * @param nColonne Colonne où placer une "faux pion"
      * @return True si victoire de l'adversaire, sinon False.
      */
     private boolean verifieVictoire(char nColonne, Joueur joueurATester){
@@ -202,11 +202,10 @@ public class Ia extends Joueur {
                 return testeVictoire(caseDispo, joueurATester);
             }
         return false;
-
     }
 
     /**
-     * Simule le placement d'une pièce de l'adversaire sans la physique de la pièce qui tombe (sans tester les cases inférieures)
+     * Simule le placement d'un pion de l'adversaire sans la physique du pion qui tombe (sans tester les cases inférieures)
      * @return True si victoire de l'adversaire, sinon False.
      */
     private boolean testeVictoire(Case laCase, Joueur joueurATester){
@@ -218,9 +217,9 @@ public class Ia extends Joueur {
     }
 
     /**
-     * Rafraichit la liste des pièces stratégie :
-     * Actualise les valeurs de chaque pièce
-     * Enlève les pièces de valeur 0
+     * Rafraichit la liste des pions stratégie :
+     * Actualise les valeurs de chaque pion
+     * Enlève les pions de valeur 0
      */
     private void refreshValeursStrategiques(List<PionStrategique> listePionsStrategiques){
         List<PionStrategique> aEnlever = new ArrayList<>();

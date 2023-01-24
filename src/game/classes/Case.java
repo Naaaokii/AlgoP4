@@ -62,11 +62,17 @@ public class Case {
             int ligne = this.idLigne();
             // Haut
             if(ligne != 6){
-                if(colonne !='A') voisins.add(jeu.getCase((char)(colonne-1), ligne+1)); //Gauche
-                else voisins.add(null);
+                if(colonne !='A'){
+                    voisins.add(jeu.getCase((char)(colonne-1), ligne+1)); //Gauche
+                }else{
+                    voisins.add(null);
+                } 
                 voisins.add(jeu.getCase(colonne, ligne+1)); // Milieu
-                if(colonne !='G') voisins.add(jeu.getCase((char)(colonne+1), ligne+1)); // Droite
-                else voisins.add(null);
+                if(colonne !='G'){
+                    voisins.add(jeu.getCase((char)(colonne+1), ligne+1)); // Droite
+                }else{
+                    voisins.add(null);
+                } 
             }
             else{
                 for(var k=0; k<3;k++){
@@ -75,20 +81,32 @@ public class Case {
             }
 
             // Gauche
-            if(colonne != 'A') voisins.add(jeu.getCase((char)(colonne-1), ligne));
-            else voisins.add(null);
-
+            if(colonne != 'A'){
+                voisins.add(jeu.getCase((char)(colonne-1), ligne));
+            }else{
+                voisins.add(null);
+            } 
             // Droite
-            if(colonne != 'G') voisins.add(jeu.getCase((char)(colonne+1), ligne));
-            else voisins.add(null);
+            if(colonne != 'G'){
+                voisins.add(jeu.getCase((char)(colonne+1), ligne));
+            }else{
+                voisins.add(null);
+            } 
 
             // Bas
             if(ligne != 1){
-                if(colonne !='A') voisins.add(jeu.getCase((char)(colonne-1), ligne-1)); //Gauche
-                else voisins.add(null);
+                if(colonne !='A'){
+                    voisins.add(jeu.getCase((char)(colonne-1), ligne-1)); //Gauche
+                }else{
+                    voisins.add(null);
+                } 
                 voisins.add(jeu.getCase(colonne,ligne-1)); // Milieu
-                if(colonne !='G') voisins.add(jeu.getCase((char)(colonne+1),ligne-1)); // Droite
-                else voisins.add(null);
+                if(colonne !='G'){
+                    voisins.add(jeu.getCase((char)(colonne+1),ligne-1)); // Droite
+                } 
+                else{
+                    voisins.add(null);
+                } 
             }
             else{
                 for(var k=0; k<3;k++){
@@ -128,7 +146,7 @@ public class Case {
 
         for (Case voisin : voisins) {
             if(voisin.getPion() != null && voisin.getPion().getCouleur().equals(couleur)){
-                    voisinsIdentiques.add(voisin);
+                voisinsIdentiques.add(voisin);
             }
         }
         return voisinsIdentiques;
@@ -143,8 +161,10 @@ public class Case {
         var dir = 0;
         do{
             allignement = 0;
-            allignement += this.verifie2Sens(Direction.getDirections(directions[dir++])); //TODO Alléger ?
-            if(allignement ==3) break;
+            allignement += this.verifie2Sens(Direction.getDirections(directions[dir++])); // Peut-être que je peux l'alléger ?
+            if(allignement ==3){
+                break;
+            } 
         }while (dir <= 3);
 
         return allignement;

@@ -4,6 +4,8 @@ import game.classes.*;
 import java.util.Locale;
 import java.util.Scanner;
 
+import javax.management.relation.RelationSupport;
+
 public class Main {
     public static Jeu jeu;
     public static Joueur joueur1;
@@ -36,8 +38,7 @@ public class Main {
         if(joueur2.getCoups() != 21){ // pas match nul
             if(joueur1.getCoups() == joueur2.getCoups()){ // joueur2 gagne quand il a joué autant de coups que joueur1
                 annonceVictoire(joueur2);
-            }
-            else annonceVictoire(joueur1);
+            }else annonceVictoire(joueur1);
         }
 
     }
@@ -54,15 +55,14 @@ public class Main {
         do {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
-            }
-            else{
+            }else{
                 scanner.nextLine();
                 choix = 0;
             }
         }while (choix != 1 && choix != 2 && choix != 3);
 
-        joueur1 = initJoueur(1, "X", choix !=3);
-        joueur2 = initJoueur(2, "O", choix == 1);
+        joueur1 = initJoueur(1, "", choix !=3);
+        joueur2 = initJoueur(2, "", choix == 1);
     }
 
     public static void annonceVictoire(Joueur gagnant){
@@ -75,9 +75,16 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             System.out.println(String.format("Nom joueur %d :", idJoueur));
             String nom = scanner.nextLine();
+
+            Scanner scan = new Scanner(System.in);
+            System.out.println(String.format("Symbole joueur %d :", idJoueur));
+            couleur = scan.nextLine().substring(0,1);
             return new Joueur(couleur, nom);
         }
         else{
+            Scanner scan = new Scanner(System.in);
+            System.out.println(String.format("Symbole joueur ordinateur :"));
+            couleur = scan.nextLine().substring(0,1);
             return new Ia(couleur, "ordinateur" + idJoueur);
         }
     }
@@ -90,10 +97,13 @@ public class Main {
         for (int lgn = 6; lgn >= 1; lgn--){
             String ligne = String.valueOf(lgn) + " |";
             for (int colonne = 0; colonne <=6; colonne++){
-                Case laCase= plateau[colonne][lgn-1];
+                Case laCase = plateau[colonne][lgn-1];
                 String affiche;
-                if(laCase.getPion() == null) affiche = " ";
-                else affiche = laCase.getPion().getCouleur();
+                if(laCase.getPion() == null){
+                    affiche = " ";
+                }else{
+                    affiche = laCase.getPion().getCouleur();
+                } 
                 ligne += " " + affiche + " |";
             }
             lePlateau += ligne + "\n";
