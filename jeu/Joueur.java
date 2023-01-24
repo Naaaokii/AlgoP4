@@ -1,3 +1,5 @@
+package jeu;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 import java.text.ParseException;
 
 public class Joueur {
-        private static final String SEPARATEUR = ";";
+
+    private static final String SEPARATEUR = ";";
 
     private String prenom;
     private String couleur;
