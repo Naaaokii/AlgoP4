@@ -1,4 +1,150 @@
-import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class Menu {
+    private static Scanner _scan = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        MenuJeu();
+    }
+
+    
+    public static void MenuJeu() {
+        System.out.println("\033[37m-----Accueil-----");
+        System.out.println("1. Joueur contre joueur");
+        System.out.println("2. Joueur contre ordinateur");
+        System.out.println("3. Ordinateur contre ordinateur");
+        System.out.println("4. Classement");
+        String choixModeJeu = _scan.nextLine();
+        switch(choixModeJeu) {
+            case "1":
+                JcJ();
+                break;
+            case "2":
+                JcO();
+                break;
+            case "3":
+                OcO();
+                break;
+            default:
+                System.out.println("Erreur");
+                break;
+        }
+    }
+    
+    private static void JcJ() { 
+        System.out.println("\033[37m Saisir le nom du joueur 1 :");
+        String joueur1 = _scan.nextLine();
+        System.out.println("\033[37m Saisir le nom du joueur 2 :");
+        String joueur2 = _scan.nextLine();  
+        ChoixSymboleJcJ();
+    }
+    
+    private static void ChoixSymboleJcJ() {
+        System.out.println("\033[37m Choisissez un symbole du joueur 1:");
+        String SymboleJ1 = _scan.nextLine();
+        System.out.println("\033[37m Choisissez un symbole du joueur 2:");
+        String SymboleJ2 = _scan.nextLine();
+        ChoixCouleurJcJ(); 
+        /*recap();*/
+    }
+
+    /*private static void recap(String joueur1, String SymboleJ1) {
+        System.out.println (joueur1 + " a choisi le symbole " + SymboleJ1);
+    }*/
+
+    private static void ChoixCouleurJcJ() {
+        System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurJ1 = _scan.nextLine();
+        System.out.println("\033[37m Choisissez la couleur du joueur 2 :");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurJ2 = _scan.nextLine(); 
+    }
+
+    private static void JcO() {
+        System.out.println("\033[37m Saisir le nom du joueur :");
+        String joueur = _scan.nextLine();
+        ChoixSymboleJcO();
+    }
+    
+    private static void ChoixSymboleJcO() {
+        System.out.println("\033[37m Choisissez un symbole du joueur :");
+        String SymboleJ = _scan.nextLine();
+        System.out.println("\033[37m Choisissez un symbole de l'ordinateur :");
+        String SymboleO = _scan.nextLine();
+        ChoixCouleurJcO();
+    }
+
+    private static void ChoixCouleurJcO() {
+        System.out.println("\033[37m Choisissez la couleur du joueur :");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurJ = _scan.nextLine();
+        System.out.println("\033[37m Choisissez la couleur de l'ordinateur :");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurO = _scan.nextLine();  
+    }
+
+    private static void OcO() {
+        ChoixSymboleOcO();
+    }
+
+    private static void ChoixSymboleOcO() {
+        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 1:");
+        String SymboleO1 = _scan.nextLine();
+        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 2:");
+        String SymboleO2 = _scan.nextLine();
+        ChoixCouleurOcO();
+    }
+
+    private static void ChoixCouleurOcO() {
+        System.out.println("\033[37m Choisissez la couleur de l'ordinateur 1:");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurO1 = _scan.nextLine();
+        System.out.println("\033[37m Choisissez la couleur de l'ordinateur 2:");
+        System.out.println("\033[37m1- Blanc\033[37m");
+        System.out.println("\033[36m2- Bleu\033[37m");
+        System.out.println("\033[35m3- Violet\033[37m");
+        System.out.println("\033[32m4- Vert\033[37m");
+        System.out.println("\033[33m5- Jaune\033[37m");
+        String CouleurO2 = _scan.nextLine();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -6,7 +152,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
-/*public class Menu {
+public class Menu {
     private static Scanner _scan = new Scanner(System.in);
     
         public static void main(String[] args) throws Exception {
