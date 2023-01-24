@@ -10,7 +10,7 @@ public class PionStrategique extends Pion{
     private static final int PTS_CASE_VIDE = 10;
     private static final int PTS_CASE_AMIE = 30;
     public static final int POINTS = 0;
-    public static final int BLOQUE = 1;
+    public final int BLOQUE = 1;
     public static final int ALLIGNEMENT = 2;
 
 

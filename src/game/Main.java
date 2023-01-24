@@ -63,7 +63,6 @@ public class Main {
 
         joueur1 = initJoueur(1, "X", choix !=3);
         joueur2 = initJoueur(2, "O", choix == 1);
-
     }
 
     public static void annonceVictoire(Joueur gagnant){
