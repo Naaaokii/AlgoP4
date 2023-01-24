@@ -26,37 +26,829 @@ public class Menu {
                                         choixClouleur1();
                                         switch (choix2) {
                                             case "1":
-                                                Blanc();
+                                                ChoixCouleur2();
                                                 switch (choix2) {
                                                     case "1":
-                                                    ChoixSymbole();
-                                                        Symbole1();
+                                                    System.out.println("vous avez choisit la couleur 1");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
                                                     break;
                                                     case "2":
-                                                        Symbole2();
+                                                    System.out.println("vous avez choisit la couleur 2");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
                                                     break;
                                                     case "3":
-                                                        Symbole3();
+                                                    System.out.println("vous avez choisit la couleur 3");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
                                                     break;
                                                     case "4":
-                                                        Symbole4();
+                                                    System.out.println("vous avez choisit la couleur 4");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
                                                     break;
                                                     case "5":
-                                                        Symbole5();
+                                                    System.out.println("vous avez choisit la couleur 5");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
                                                     break;
                                                 }
                                             break;
                                             case "2":
-                                                Bleu();
+                                            ChoixCouleur2();
+                                            switch (choix2) {
+                                                case "1":
+                                                System.out.println("vous avez choisit la couleur 1");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "2":
+                                                System.out.println("vous avez choisit la couleur 2");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "3":
+                                                System.out.println("vous avez choisit la couleur 3");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "4":
+                                                System.out.println("vous avez choisit la couleur 4");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "5":
+                                                System.out.println("vous avez choisit la couleur 5");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "q":
+                                                    switch (choix2){};
+                                                default:
+                                                    System.out.println("Mauvaise touche");
+                                                break;
+                                            }
                                             break;
                                             case "3":
-                                                Violet();
+                                                ChoixCouleur2();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit la couleur 1");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit la couleur 2");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit la couleur 3");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit la couleur 4");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit la couleur 5");
+                                                    ChoixSymbole1();
+                                                    switch (choix2) {
+                                                        case "1":
+                                                        System.out.println("vous avez choisit le symbole 1");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "2":
+                                                        System.out.println("vous avez choisit le symbole 2");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "3":
+                                                        System.out.println("vous avez choisit le symbole 3");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "4":
+                                                        System.out.println("vous avez choisit le symbole 4");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "5":
+                                                        System.out.println("vous avez choisit le symbole 5");
+                                                            ChoixSymbole2();
+                                                        break;
+                                                        case "q":
+                                                            switch (choix2){};
+                                                        default:
+                                                            System.out.println("Mauvaise touche");
+                                                        break;
+                                                    }
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
                                             break;
                                             case "4":
-                                                Vert();
+                                            ChoixCouleur2();
+                                            switch (choix2) {
+                                                case "1":
+                                                System.out.println("vous avez choisit la couleur 1");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "2":
+                                                System.out.println("vous avez choisit la couleur 2");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "3":
+                                                System.out.println("vous avez choisit la couleur 3");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "4":
+                                                System.out.println("vous avez choisit la couleur 4");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "5":
+                                                System.out.println("vous avez choisit la couleur 5");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "q":
+                                                    switch (choix2){};
+                                                default:
+                                                    System.out.println("Mauvaise touche");
+                                                break;
+                                            }
                                             break;
                                             case "5":
-                                                Jaune();
+                                            ChoixCouleur2();
+                                            switch (choix2) {
+                                                case "1":
+                                                System.out.println("vous avez choisit la couleur 1");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "2":
+                                                System.out.println("vous avez choisit la couleur 2");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "3":
+                                                System.out.println("vous avez choisit la couleur 3");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "4":
+                                                System.out.println("vous avez choisit la couleur 4");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "5":
+                                                System.out.println("vous avez choisit la couleur 5");
+                                                ChoixSymbole1();
+                                                switch (choix2) {
+                                                    case "1":
+                                                    System.out.println("vous avez choisit le symbole 1");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "2":
+                                                    System.out.println("vous avez choisit le symbole 2");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "3":
+                                                    System.out.println("vous avez choisit le symbole 3");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "4":
+                                                    System.out.println("vous avez choisit le symbole 4");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "5":
+                                                    System.out.println("vous avez choisit le symbole 5");
+                                                        ChoixSymbole2();
+                                                    break;
+                                                    case "q":
+                                                        switch (choix2){};
+                                                    default:
+                                                        System.out.println("Mauvaise touche");
+                                                    break;
+                                                }
+                                                break;
+                                                case "q":
+                                                    switch (choix2){};
+                                                default:
+                                                    System.out.println("Mauvaise touche");
+                                                break;
+                                            }
                                             break;
                                             case "q":
                                                 switch (choix2){};
@@ -94,55 +886,6 @@ public class Menu {
             }
         }
         
-        
-        
-        
-        private static void Symbole5() {
-        }
-
-
-
-
-        private static void Symbole4() {
-        }
-
-
-
-
-        private static void Symbole3() {
-        }
-
-
-
-
-        private static void Symbole2() {
-        }
-
-
-
-
-        private static void Symbole1() {
-        }
-
-
-
-
-        private static void ChoixSymbole() {
-            ArrayList<String> menus = new ArrayList<>();
-            menus.add("\033[37mJoueur 1 choisissez votre symbole");
-            menus.add("1- @");
-            menus.add("2- =");
-            menus.add("3- &");
-            menus.add("3- $");
-            menus.add("3- €");
-            for (String menu : menus) {
-                System.out.println(menu);
-            }
-        }
-
-
-
-
         private static void afficherMenu() {
             ArrayList<String> menus = new ArrayList<>();
             menus.add("\033[37m     MENU");
@@ -154,14 +897,10 @@ public class Menu {
             }
         }
         
-        /*private static void Settings() {
-        }*/
-        
         private static void Jouer() {
             /*System.out.println("Choisissez le nombre de joueur");
             menus.add("1- 1 joueur");
             menus.add("2- 2 joueurs");*/
-            String choix = _scan.nextLine();
             ArrayList<String> menus = new ArrayList<>();
             menus.add("\033[37m Choisissez le mode de jeu");
             menus.add("1- Joueur contre Joueur");
@@ -171,19 +910,17 @@ public class Menu {
                 System.out.println(menu);
             }
         }
-
+        
         private static void Classement() {
-
+            
         }
         
-        private static void JcJ() {
-            
+        private static void JcJ() { 
             System.out.println("\033[37m Saisir le nom du joueur 1 :");
             String joueur1 = _scan.nextLine();
             System.out.println("\033[37m Saisir le nom du joueur 2 :");
             String joueur2 = _scan.nextLine();
-            choixClouleur1();
-            
+            choixClouleur1();   
         }
         
         private static void JcIA() {
@@ -195,9 +932,9 @@ public class Menu {
             System.out.println("4- Level 4 :");
             String choixIa = _scan.nextLine();
         }
-
+        
         private static void choixClouleur1(){
-            String choix = _scan.nextLine();
+            /*String choix = _scan.nextLine();
             ArrayList<String> menusC = new ArrayList<>();
             menusC.add(" Choisissez la couleur du joueur 1");
             menusC.add("\033[37m1- Blanc\033[37m");
@@ -208,22 +945,53 @@ public class Menu {
             menusC.add("q- Retour");
             for (String menu : menusC) {
                 System.out.println(menu);
-            }
+            }*/
+            System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            String choixCouleurJ1 = _scan.nextLine();
         }
         
-        private static void Jaune() {
+        private static void ChoixCouleur2() {
+            System.out.println("\033[37m Choisissez la couleur du joueur 2 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            String choixCouleurJ2 = _scan.nextLine();
         }
-    
-        private static void Vert() {
+        
+        private static void ChoixSymbole1() {
+            /*ArrayList<String> menus = new ArrayList<>();
+            menus.add("\033[37mJoueur 1 choisissez votre symbole");
+            menus.add("1- @");
+            menus.add("2- =");
+            menus.add("3- &");
+            menus.add("3- $");
+            menus.add("3- €");
+            for (String menu : menus) {
+                System.out.println(menu);
+            }*/
+            System.out.println("\033[37m Choix du symbole du Joueur 1 :");
+            System.out.println("1- @");
+            System.out.println("2- =");
+            System.out.println("3- &");
+            System.out.println("4- $");
+            System.out.println("5- €");
+            String choixSymb1 = _scan.nextLine();
         }
-    
-        private static void Violet() {
+        
+        private static void ChoixSymbole2() {
+            System.out.println("\033[37m Choix du symbole du Joueur 2 :");
+            System.out.println("1- @");
+            System.out.println("2- =");
+            System.out.println("3- &");
+            System.out.println("4- $");
+            System.out.println("5- €");
+            String choixSymb2 = _scan.nextLine();
         }
-    
-        private static void Bleu() {
-        }
-    
-        private static void Blanc() {
-        }
-    }
-    
+    }   
