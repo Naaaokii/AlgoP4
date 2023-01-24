@@ -68,6 +68,11 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurJ2 = _scan.nextLine(); 
+        jouerJcJ();
+    }
+
+    private static void jouerJcJ() {
+        //Puissance 4 joueur contre joueur
     }
 
     private static void JcO() {
@@ -99,6 +104,21 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurO = _scan.nextLine();  
+        choixDiffO();
+    }
+
+    private static void choixDiffO() {
+        System.out.println("\033[37m Choisissez la difficulté de l'ordinateur :");
+        System.out.println("1- Facile");
+        System.out.println("2- Normal");
+        System.out.println("3- Difficile");
+        System.out.println("4- Impossible");
+        String DiffO = _scan.nextLine(); 
+        jouerJcO(); 
+    }
+
+    private static void jouerJcO() {
+        //Puissance 4 Joueur contre Ordinateur
     }
 
     private static void OcO() {
@@ -128,6 +148,27 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurO2 = _scan.nextLine();
+        choixDiffOcO();
+    }
+
+    private static void choixDiffOcO() {
+        System.out.println("\033[37m Choisissez la difficulté de l'ordinateur 1:");
+        System.out.println("1- Facile");
+        System.out.println("2- Normal");
+        System.out.println("3- Difficile");
+        System.out.println("4- Impossible");
+        String DiffO1 = _scan.nextLine();
+        System.out.println("\033[37m Choisissez la difficulté de l'ordinateur 2:");
+        System.out.println("1- Facile");
+        System.out.println("2- Normal");
+        System.out.println("3- Difficile");
+        System.out.println("4- Impossible");
+        String DiffO2 = _scan.nextLine();
+        jouerOcO();   
+    }
+
+    private static void jouerOcO() {
+        //Puissance 4 en ordinateur contre ordinateur
     }
 }
 
