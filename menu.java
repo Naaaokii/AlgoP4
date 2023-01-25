@@ -73,6 +73,12 @@ public class Menu {
             System.out.println("Choisissez le symbole du joueur 2:");
             SymboleJ2 = _scan.nextLine().substring(0,1);
         }
+        while (SymboleJ2.equals(SymboleJ1)) {
+            System.out.println("\033[31mLe symbole du joueur 2 doit être différent du symbole du joueur 1\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole du joueur 2:");
+            SymboleJ2 = _scan.nextLine().substring(0,1);
+        }
         ChoixCouleurJcJ();
     }
 
@@ -145,6 +151,12 @@ public class Menu {
         String SymboleO = _scan.nextLine().substring(0,1);
         while (SymboleO.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole de l'odinateur :");
+            SymboleO = _scan.nextLine().substring(0,1);
+        }
+        while (SymboleJ.equals(SymboleO)) {
+            System.out.println("\033[31mLe symbole de l'ordinateur doit être différent du symbole du joueur\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole de l'odinateur :");
             SymboleO = _scan.nextLine().substring(0,1);
@@ -237,6 +249,12 @@ public class Menu {
             System.out.println("Choisissez le symbole de l'odinateur 2 :");
             SymboleO2 = _scan.nextLine().substring(0,1);
         }
+        while (SymboleO1.equals(SymboleO2)) {
+            System.out.println("\033[31mLes symboles des 2 ordinateurs doivent être différents\033[37m");
+            System.out.println();
+            System.out.println("Choisissez un symbole de l'odinateur 2 :");
+            SymboleO2 = _scan.nextLine().substring(0,1);
+        }
         ChoixCouleurOcO();
     }
 
@@ -320,10 +338,6 @@ public class Menu {
         //Puissance 4 en ordinateur contre ordinateur
     }
 }
-
-
-
-
 
 
 
