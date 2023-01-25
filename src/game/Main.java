@@ -38,10 +38,8 @@ public class Main {
         if(joueur2.getCoups() != 21){ // pas match nul
             if(joueur1.getCoups() == joueur2.getCoups()){ // joueur2 gagne quand il a joué autant de coups que joueur1
                 annonceVictoire(joueur2);
-                joueur2.sauvegarderTop10();
             }else{
                 annonceVictoire(joueur1);
-                joueur1.sauvegarderTop10();
             } 
         }
 
@@ -61,7 +59,7 @@ public class Main {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-                    
+
                 }
             }else{
                 scanner.nextLine();
@@ -80,22 +78,14 @@ public class Main {
 
     public static Joueur initJoueur(int idJoueur, String couleur, boolean humain){
 
-        if(humain){
-            Scanner scanner = new Scanner(System.in);
-            System.out.println(String.format("Nom joueur %d :", idJoueur));
-            String nom = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(String.format("Nom joueur %d :", idJoueur));
+        String nom = scanner.nextLine();
 
-            Scanner scan = new Scanner(System.in);
-            System.out.println(String.format("Symbole joueur %d :", idJoueur));
-            couleur = scan.nextLine().substring(0,1);
-            return new Joueur(couleur, nom);
-        }
-        else{
-            Scanner scan = new Scanner(System.in);
-            System.out.println(String.format("Symbole joueur ordinateur :"));
-            couleur = scan.nextLine().substring(0,1);
-            return new Ia(couleur, "ordinateur" + idJoueur);
-        }
+        Scanner scan = new Scanner(System.in);
+        System.out.println(String.format("Symbole joueur %d :", idJoueur));
+        couleur = scan.nextLine().substring(0,1);
+        return new Joueur(couleur, nom);
     }
 
     public static void afficherPlateau(){
@@ -128,26 +118,16 @@ public class Main {
     public static boolean tour(){
         Scanner scanner = new Scanner(System.in);
         Joueur joueur = jeu.tourJoueur();
-        if(!(joueur instanceof Ia)){
 
-            boolean valide;
+        boolean valide;
+        do {
+            char choixColonne;
             do {
-                char choixColonne;
-                do {
-                    System.out.println(String.format("Coup n°%d de %s :", joueur.getCoups(), joueur.getNom()));
-                    choixColonne = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
-                }while (choixColonne <'A' || choixColonne > 'G');
-                valide = joueur.placePion(choixColonne);
-            }while (!valide);
-        }
-        else{ //ICI TEST DU BOT
-
-            Ia j = (Ia)joueur;
-            pause();
-            j.tour();
-            System.out.println(j.getNom() + " place en case " + j.lastCoup().getIdCase());
-        }
-
+                System.out.println(String.format("Coup n°%d de %s :", joueur.getCoups(), joueur.getNom()));
+                choixColonne = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
+            }while (choixColonne <'A' || choixColonne > 'G');
+            valide = joueur.placePion(choixColonne);
+        }while (!valide);
 
         return jeu.finTour(joueur.lastCoup());
     }

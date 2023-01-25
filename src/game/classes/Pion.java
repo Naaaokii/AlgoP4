@@ -24,8 +24,4 @@ public class Pion {
     public String getCouleur() {
         return couleur;
     }
-
-    public PionStrategique toPionStrategique(){
-        return new PionStrategique(joueur, laCase);
-    }
 }
