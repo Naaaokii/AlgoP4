@@ -35,16 +35,40 @@ public class Menu {
     private static void JcJ() { 
         System.out.println("\033[37m Saisir le nom du joueur 1 :");
         String joueur1 = _scan.nextLine();
+        while (joueur1.isBlank()) {
+            System.out.println("\033[31mLe nom est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Saisir le nom du joueur 1 :");
+            joueur1 = _scan.nextLine();
+        }
         System.out.println("\033[37m Saisir le nom du joueur 2 :");
         String joueur2 = _scan.nextLine();  
+        while (joueur2.isBlank()) {
+            System.out.println("\033[31mLe nom est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Saisir le nom du joueur 2 :");
+            joueur2 = _scan.nextLine();
+        }
         ChoixSymboleJcJ();
     }
     
     private static void ChoixSymboleJcJ() {
-        System.out.println("\033[37m Choisissez un symbole du joueur 1:");
+        System.out.println("\033[37m Choisissez le symbole du joueur 1:");
         String SymboleJ1 = _scan.nextLine();
+        while (SymboleJ1.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole du joueur 1:");
+            SymboleJ1 = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez un symbole du joueur 2:");
         String SymboleJ2 = _scan.nextLine();
+        while (SymboleJ2.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole du joueur 2:");
+            SymboleJ2 = _scan.nextLine();
+        }
         ChoixCouleurJcJ(); 
         /*recap();*/
     }
@@ -61,13 +85,35 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurJ1 = _scan.nextLine();
+        while (CouleurJ1.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurJ1 = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez la couleur du joueur 2 :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
         System.out.println("\033[35m3- Violet\033[37m");
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
-        String CouleurJ2 = _scan.nextLine(); 
+        String CouleurJ2 = _scan.nextLine();
+        while (CouleurJ2.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur du joueur 2 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurJ2 = _scan.nextLine();
+        }
         jouerJcJ();
     }
 
@@ -78,14 +124,32 @@ public class Menu {
     private static void JcO() {
         System.out.println("\033[37m Saisir le nom du joueur :");
         String joueur = _scan.nextLine();
+        while (joueur.isBlank()) {
+            System.out.println("\033[31mLe nom est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Saisir le nom du joueur :");
+            joueur = _scan.nextLine();
+        }
         ChoixSymboleJcO();
     }
     
     private static void ChoixSymboleJcO() {
         System.out.println("\033[37m Choisissez un symbole du joueur :");
         String SymboleJ = _scan.nextLine();
+        while (SymboleJ.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole du joueur :");
+            SymboleJ = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez un symbole de l'ordinateur :");
         String SymboleO = _scan.nextLine();
+        while (SymboleO.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole de l'odinateur :");
+            SymboleO = _scan.nextLine();
+        }
         ChoixCouleurJcO();
     }
 
@@ -97,13 +161,35 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurJ = _scan.nextLine();
+        while (CouleurJ.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur du joueur :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurJ = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez la couleur de l'ordinateur :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
         System.out.println("\033[35m3- Violet\033[37m");
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
-        String CouleurO = _scan.nextLine();  
+        String CouleurO = _scan.nextLine();
+        while (CouleurO.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur de l'ordinateur :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurO = _scan.nextLine();
+        }
         choixDiffO();
     }
 
@@ -114,6 +200,16 @@ public class Menu {
         System.out.println("3- Difficile");
         System.out.println("4- Impossible");
         String DiffO = _scan.nextLine(); 
+        while (DiffO.isBlank()) {
+            System.out.println("\033[31mLe choix de la difficulté est obligatoire\033[37m");
+            System.out.println();
+            System.out.println(" Choisissez la difficulté de l'ordinateur :");
+            System.out.println("1- Facile");
+            System.out.println("2- Normal");
+            System.out.println("3- Difficile");
+            System.out.println("4- Impossible");
+            DiffO = _scan.nextLine();
+        }
         jouerJcO(); 
     }
 
@@ -126,21 +222,44 @@ public class Menu {
     }
 
     private static void ChoixSymboleOcO() {
-        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 1:");
+        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 1 :");
         String SymboleO1 = _scan.nextLine();
-        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 2:");
+        while (SymboleO1.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole de l'odinateur 1 :");
+            SymboleO1 = _scan.nextLine();
+        }
+        System.out.println("\033[37m Choisissez un symbole de l'ordinateur 2 :");
         String SymboleO2 = _scan.nextLine();
+        while (SymboleO2.isBlank()) {
+            System.out.println("\033[31mLe symbole est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("Choisissez le symbole de l'odinateur 2 :");
+            SymboleO2 = _scan.nextLine();
+        }
         ChoixCouleurOcO();
     }
 
     private static void ChoixCouleurOcO() {
-        System.out.println("\033[37m Choisissez la couleur de l'ordinateur 1:");
+        System.out.println("\033[37m Choisissez la couleur de l'ordinateur 1 :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
         System.out.println("\033[35m3- Violet\033[37m");
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurO1 = _scan.nextLine();
+        while (CouleurO1.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur de l'ordinateur 1 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurO1 = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez la couleur de l'ordinateur 2:");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
@@ -148,6 +267,17 @@ public class Menu {
         System.out.println("\033[32m4- Vert\033[37m");
         System.out.println("\033[33m5- Jaune\033[37m");
         String CouleurO2 = _scan.nextLine();
+        while (CouleurO2.isBlank()) {
+            System.out.println("\033[31mLa couleur est obligatoire\033[37m");
+            System.out.println();
+            System.out.println("\033[37m Choisissez la couleur de l'ordinateur 2 :");
+            System.out.println("\033[37m1- Blanc\033[37m");
+            System.out.println("\033[36m2- Bleu\033[37m");
+            System.out.println("\033[35m3- Violet\033[37m");
+            System.out.println("\033[32m4- Vert\033[37m");
+            System.out.println("\033[33m5- Jaune\033[37m");
+            CouleurO2 = _scan.nextLine();
+        }
         choixDiffOcO();
     }
 
@@ -158,12 +288,32 @@ public class Menu {
         System.out.println("3- Difficile");
         System.out.println("4- Impossible");
         String DiffO1 = _scan.nextLine();
+        while (DiffO1.isBlank()) {
+            System.out.println("\033[31mLe choix de la difficulté est obligatoire\033[37m");
+            System.out.println();
+            System.out.println(" Choisissez la difficulté de l'ordinateur 1 :");
+            System.out.println("1- Facile");
+            System.out.println("2- Normal");
+            System.out.println("3- Difficile");
+            System.out.println("4- Impossible");
+            DiffO1 = _scan.nextLine();
+        }
         System.out.println("\033[37m Choisissez la difficulté de l'ordinateur 2:");
         System.out.println("1- Facile");
         System.out.println("2- Normal");
         System.out.println("3- Difficile");
         System.out.println("4- Impossible");
         String DiffO2 = _scan.nextLine();
+        while (DiffO2.isBlank()) {
+            System.out.println("\033[31mLe choix de la difficulté est obligatoire\033[37m");
+            System.out.println();
+            System.out.println(" Choisissez la difficulté de l'ordinateur 2 :");
+            System.out.println("1- Facile");
+            System.out.println("2- Normal");
+            System.out.println("3- Difficile");
+            System.out.println("4- Impossible");
+            DiffO2 = _scan.nextLine();
+        }
         jouerOcO();   
     }
 
