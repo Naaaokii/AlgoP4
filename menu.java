@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.io.IOException;
+
 import jeu.*;
 import java.util.ArrayList;
 
@@ -63,11 +64,8 @@ public class Menu {
         }
         c.setPrenom(prenom);
 
-        System.out.println("-- Forme --");
-        System.out.println("§");
-        System.out.println("&");
-        System.out.println("@");
-        System.out.println("#");
+        System.out.println("--- Forme ---");
+        System.out.println("§ - & - @ - #");
         System.out.print("Saisir la forme du joueur : ");
         String forme = scanner.nextLine();
         while (!isValidForme(forme)) {
@@ -130,7 +128,6 @@ public class Menu {
     }
 
     public static void Tableau() {
-        String tableau = "\n" + "  1   2   3   4   5   6   7  \n" + "\n";
         ArrayList<ArrayList<String>> colones = new ArrayList<ArrayList<String>>();
     
         for (int i = 0; i < 6; i++) {
@@ -159,52 +156,37 @@ public class Menu {
         System.out.println("|   |   |   |   |   |   |   |");
         System.out.println("\\===========================/");
         
-    
-        boolean x = false;
-        while (!x) {
+        boolean choix = false;
+        while (!choix) {
             System.out.println();
+            
             System.out.print("Saisir un nombre : ");
             String nombre = scanner.nextLine();
-            while (!isValidNumero(nombre)) {
-                System.out.println("\033[31mLe nombre est obligatoire\033[0m");
-                System.out.println();
-                System.out.print("Saisir un nombre: ");
-                nombre = scanner.nextLine();
-        }
-        if (nombre.equals("1")) {
-            colones.get(5).set(1, "@");
-        }
-        if (nombre.equals("2")) {
-            colones.get(5).set(2, "@");
-        }
-        if (nombre.equals("3")) {
-            colones.get(5).set(3, "@");
-        }
-        if (nombre.equals("4")) {
-            colones.get(5).set(4, "@");
-        }
-        if (nombre.equals("5")) {
-            colones.get(5).set(5, "@");
-        }
-        if (nombre.equals("6")) {
-            colones.get(5).set(6, "@");
-        }
-        if (nombre.equals("7")) {
-            colones.get(5).set(7, "@");
-        }
-        for (int i = 0; i < 5; i++) {
-            for (int j = 1; j < 8; j++) {
-                tableau += "| " +colones.get(i).get(j) + " ";
+            
+            if (nombre.equals(nombre)) {
+                int chiffre = Integer.parseInt(nombre);
+                for (int a = 5; a >= 0; a--) {
+                    if (colones.get(a).get(chiffre).equals(" ")) {
+                        colones.get(a).set(chiffre, "@");
+                        break;
+                    }
+                }
             }
-            tableau += "|\n|---+---+---+---+---+---+---|\n";
-        }
-        for (int i = 5; i < 6; i++) {
-            for (int j = 1; j < 8; j++) {
-                tableau += "| " +colones.get(i).get(j) + " ";
+            String tableau = "\n" + "  1   2   3   4   5   6   7  \n" + "\n";
+            for (int i = 0; i < 5; i++) {
+                for (int j = 1; j < 8; j++) {
+                    tableau += "| " +colones.get(i).get(j) + " ";
+                }
+                tableau += "|\n|---+---+---+---+---+---+---|\n";
             }
-            tableau += "|\n\\===========================/";
-        }
-        System.out.println(tableau);
+            for (int i = 5; i < 6; i++) {
+                for (int j = 1; j < 8; j++) {
+                    tableau += "| " +colones.get(i).get(j) + " ";
+                }
+                tableau += "|\n\\===========================/";
+            }
+            System.out.print("\033[H\033[2J");
+            System.out.println(tableau);
         }
     }
 }
