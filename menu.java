@@ -1,14 +1,15 @@
+import java.io.IOException;
 import java.util.Scanner;
 import jeu.*;
 
 public class Menu {
     private static Scanner _scan = new Scanner(System.in);
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         MenuJeu();
     }
 
-    public static void MenuJeu() {
+    public static void MenuJeu() throws IOException {
         System.out.println("\033[37m-----Accueil-----");
         System.out.println("1. Joueur contre joueur");
         System.out.println("2. Joueur contre ordinateur");
@@ -31,7 +32,9 @@ public class Menu {
         }
     }
     
-    private static void JcJ() { 
+    private static void JcJ() throws IOException { 
+        Joueur joueur11 = new Joueur();
+        Joueur joueur22 = new Joueur();
         System.out.println("\033[37m Saisir le nom du joueur 1 :");
         String joueur1 = _scan.nextLine();
         while (joueur1.isBlank()) {
@@ -40,6 +43,7 @@ public class Menu {
             System.out.println("Saisir le nom du joueur 1 :");
             joueur1 = _scan.nextLine();
         }
+        joueur11.setPrenom(joueur1);
         System.out.println("\033[37m Saisir le nom du joueur 2 :");
         String joueur2 = _scan.nextLine();  
         while (joueur2.isBlank()) {
@@ -54,10 +58,10 @@ public class Menu {
             System.out.println("Saisir le nom du joueur 2 :");
             joueur2 = _scan.nextLine();
         }
-        ChoixSymboleJcJ();
-    }
-    
-    private static void ChoixSymboleJcJ() {
+        joueur22.setPrenom(joueur2);
+        
+        
+        /*ChoixSymboleJcJ();*/
         System.out.println("\033[37m Choisissez le symbole du joueur 1:");
         String SymboleJ1 = _scan.nextLine().substring(0,1);
         while (SymboleJ1.isBlank()) {
@@ -66,6 +70,7 @@ public class Menu {
             System.out.println("Choisissez le symbole du joueur 1:");
             SymboleJ1 = _scan.nextLine().substring(0,1);
         }
+        joueur11.setForme(SymboleJ1);
         System.out.println("\033[37m Choisissez un symbole du joueur 2:");
         String SymboleJ2 = _scan.nextLine().substring(0,1);
         while (SymboleJ2.isBlank()) {
@@ -80,10 +85,9 @@ public class Menu {
             System.out.println("Choisissez le symbole du joueur 2:");
             SymboleJ2 = _scan.nextLine().substring(0,1);
         }
-        ChoixCouleurJcJ();
-    }
-
-    private static void ChoixCouleurJcJ() {
+        joueur22.setForme(SymboleJ2);
+        
+    
         System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
@@ -102,6 +106,7 @@ public class Menu {
             System.out.println("\033[33m5- Jaune\033[37m");
             CouleurJ1 = _scan.nextLine();
         }
+        joueur11.setCouleur(CouleurJ1);
         System.out.println("\033[37m Choisissez la couleur du joueur 2 :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
@@ -118,10 +123,15 @@ public class Menu {
             System.out.println("\033[35m3- Violet\033[37m");
             System.out.println("\033[32m4- Vert\033[37m");
             System.out.println("\033[33m5- Jaune\033[37m");
-            CouleurJ2 = _scan.nextLine();
         }
+        CouleurJ2 = _scan.nextLine();
+        joueur22.setCouleur(CouleurJ2);
+        joueur11.enregistrer();
+        joueur22.enregistrer();
+        
         jouerJcJ();
-    }
+
+}
 
     private static void jouerJcJ() {
         Plateau.Tableau();
