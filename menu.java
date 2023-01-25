@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import jeu.*;
 
 public class Menu {
     private static Scanner _scan = new Scanner(System.in);
@@ -123,7 +124,7 @@ public class Menu {
     }
 
     private static void jouerJcJ() {
-        //Puissance 4 joueur contre joueur
+        Plateau.Tableau();
     }
 
     private static void JcO() {
