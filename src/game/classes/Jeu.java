@@ -105,13 +105,13 @@ public class Jeu {
         return caseLibre;
     }
 
-
     public Joueur tourJoueur(){
         tour++;
         if (tour%2 != 0){
             return joueur1;
-        }
-        else return joueur2;
+        }else{
+            return joueur2;
+        } 
     }
 
     /**
@@ -121,10 +121,7 @@ public class Jeu {
      */
     public boolean finTour(Case caseJouee){ // Reprendre la case jouée dans la procédure ?
         return caseJouee.compteAllignements() == 3;
-
     }
-
-
 
 
     /**

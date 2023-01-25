@@ -1,17 +1,17 @@
 package game;
 import game.classes.*;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.management.relation.RelationSupport;
-
 public class Main {
+
     public static Jeu jeu;
     public static Joueur joueur1;
     public static Joueur joueur2;
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) throws IOException{
 
         /*
         Initialisation
@@ -38,7 +38,11 @@ public class Main {
         if(joueur2.getCoups() != 21){ // pas match nul
             if(joueur1.getCoups() == joueur2.getCoups()){ // joueur2 gagne quand il a joué autant de coups que joueur1
                 annonceVictoire(joueur2);
-            }else annonceVictoire(joueur1);
+                joueur2.sauvegarderTop10();
+            }else{
+                annonceVictoire(joueur1);
+                joueur1.sauvegarderTop10();
+            } 
         }
 
     }
@@ -50,16 +54,20 @@ public class Main {
         System.out.println("| 1- Jouer à deux                |");
         System.out.println("| 2- Jouer face à l'ordi         |");
         System.out.println("| 3- Ordi vs ordi                |");
+        System.out.println("| 4- Lister le top score         |");
         System.out.println("----------------------------------");
         int choix;
         do {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
+                if (choix == 4){
+                    
+                }
             }else{
                 scanner.nextLine();
                 choix = 0;
             }
-        }while (choix != 1 && choix != 2 && choix != 3);
+        }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
 
         joueur1 = initJoueur(1, "", choix !=3);
         joueur2 = initJoueur(2, "", choix == 1);
@@ -68,6 +76,7 @@ public class Main {
     public static void annonceVictoire(Joueur gagnant){
         System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups() + " coups !");
     }
+
 
     public static Joueur initJoueur(int idJoueur, String couleur, boolean humain){
 
@@ -148,5 +157,6 @@ public class Main {
         System.out.println("Tapez 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
     }
+
 
 }

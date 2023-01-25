@@ -1,6 +1,13 @@
 package game.classes;
 
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
 
 public class Joueur {
 
@@ -13,6 +20,7 @@ public class Joueur {
     protected String nom;
     protected List<Case> histoCoups;
 
+    public static final String SEPARATEUR = ";";
 
     public Joueur(String couleur){
         idJoueur = compteur;
@@ -83,5 +91,45 @@ public class Joueur {
     protected char colonneAleatoire(char Min, char Max){
 
         return (char)(Min + (int)(Math.random() * ((Max - Min) + 1)));
+    }
+
+    // Déclarer une méthode nommée "sauvegarderTop10" qui peut lever une IOException
+    /**
+     * Permet d'inscrire les 10 meilleurs joueurs dans le fichier csv
+     * @throws IOException
+     * Ne renvoie rien
+     */
+    public void sauvegarderTop10() throws IOException { //exception fichier 
+        
+        // Créer un objet PrintWriter qui écrira dans un fichier nommé "top10.csv" en utilisant l'option "true" pour ajouter du contenu à la fin du fichier
+        PrintWriter printwriter = new PrintWriter(new BufferedWriter(new FileWriter("scoreTop10.csv", true)));
+        
+        try {
+            // Écrire la chaîne de caractères représentant l'objet courant dans le fichier
+            printwriter.println(this.toString());
+        } finally {
+            // Fermer le flux de données lorsque la méthode est terminée
+            printwriter.close();
+        }
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        // Créer un objet StringBuilder vide
+        StringBuilder builder = new StringBuilder();
+        
+        // Ajouter le nom de l'objet suivi du séparateur
+        builder.append(getNom());
+        builder.append(SEPARATEUR);
+        
+        // Ajouter les coups de l'objet suivi du séparateur
+        builder.append(getCoups());
+        builder.append(SEPARATEUR);
+        
+        // Renvoyer la chaîne de caractères contenue dans l'objet StringBuilder
+        return builder.toString();
     }
 }
