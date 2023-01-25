@@ -52,7 +52,6 @@ public class Main {
         System.out.println("| 1- Jouer à deux                |");
         System.out.println("| 2- Jouer face à l'ordi         |");
         System.out.println("| 3- Ordi vs ordi                |");
-        System.out.println("| 4- Lister le top score         |");
         System.out.println("----------------------------------");
         int choix;
         do {
