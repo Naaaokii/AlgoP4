@@ -35,9 +35,9 @@ public class Joueur_2 {
 
         System.out.println("-- Couleur --");
         System.out.println("1.Rouge");
-        System.out.println("2.Bleu");
-        System.out.println("3.Vert");
-        System.out.println("4.Jaune");
+        System.out.println("2.Vert");
+        System.out.println("3.Jaune");
+        System.out.println("4.Bleu");
         System.out.print("Saisir la couleur du joueur : ");
         String couleur = scanner.nextLine();
         while (!isValidColor(couleur)) {
@@ -46,14 +46,8 @@ public class Joueur_2 {
             System.out.print("Saisir la couleur du joueur : ");
             couleur = scanner.nextLine();
         }
-        if (couleur.equals("1")) {
-            System.out.println("Forme et couleur choisie : " + "\033[31m" + forme + "\033[0m");
-        } else if (couleur.equals("2")) {
-            System.out.println("Forme et couleur choisie : " + "\033[34m" + forme + "\033[0m");
-        } else if (couleur.equals("3")) {
-            System.out.println("Forme et couleur choisie : " + "\033[32m" + forme + "\033[0m");
-        } else if (couleur.equals("4")) {
-            System.out.println("Forme et couleur choisie : " + "\033[33m" + forme + "\033[0m");
+        if (couleur.equals(couleur)) {
+            System.out.println("Forme et couleur choisie : " + "\033[3" + couleur + "m" + forme + "\033[0m");
         }
 
         c.setCouleur(couleur);
