@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Menu {
     private static Scanner _scan = new Scanner(System.in);
     
@@ -8,7 +7,6 @@ public class Menu {
         MenuJeu();
     }
 
-    
     public static void MenuJeu() {
         System.out.println("\033[37m-----Accueil-----");
         System.out.println("1. Joueur contre joueur");
@@ -69,13 +67,8 @@ public class Menu {
             System.out.println("Choisissez le symbole du joueur 2:");
             SymboleJ2 = _scan.nextLine().substring(0,1);
         }
-        ChoixCouleurJcJ(); 
-        /*recap();*/
+        ChoixCouleurJcJ();
     }
-
-    /*private static void recap(String joueur1, String SymboleJ1) {
-        System.out.println (joueur1 + " a choisi le symbole " + SymboleJ1);
-    }*/
 
     private static void ChoixCouleurJcJ() {
         System.out.println("\033[37m Choisissez la couleur du joueur 1 :");
