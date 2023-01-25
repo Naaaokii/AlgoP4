@@ -47,6 +47,12 @@ public class Menu {
             System.out.println("Saisir le nom du joueur 2 :");
             joueur2 = _scan.nextLine();
         }
+        while (joueur2.equals(joueur1)) {
+            System.out.println("\033[31mLe nom du joueur 2 doit être différent du nom du joueur 1\033[37m");
+            System.out.println();
+            System.out.println("Saisir le nom du joueur 2 :");
+            joueur2 = _scan.nextLine();
+        }
         ChoixSymboleJcJ();
     }
     
