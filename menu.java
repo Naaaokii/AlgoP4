@@ -54,20 +54,20 @@ public class Menu {
     
     private static void ChoixSymboleJcJ() {
         System.out.println("\033[37m Choisissez le symbole du joueur 1:");
-        String SymboleJ1 = _scan.nextLine();
+        String SymboleJ1 = _scan.nextLine().substring(0,1);
         while (SymboleJ1.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole du joueur 1:");
-            SymboleJ1 = _scan.nextLine();
+            SymboleJ1 = _scan.nextLine().substring(0,1);
         }
         System.out.println("\033[37m Choisissez un symbole du joueur 2:");
-        String SymboleJ2 = _scan.nextLine();
+        String SymboleJ2 = _scan.nextLine().substring(0,1);
         while (SymboleJ2.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole du joueur 2:");
-            SymboleJ2 = _scan.nextLine();
+            SymboleJ2 = _scan.nextLine().substring(0,1);
         }
         ChoixCouleurJcJ(); 
         /*recap();*/
@@ -135,20 +135,20 @@ public class Menu {
     
     private static void ChoixSymboleJcO() {
         System.out.println("\033[37m Choisissez un symbole du joueur :");
-        String SymboleJ = _scan.nextLine();
+        String SymboleJ = _scan.nextLine().substring(0,1);
         while (SymboleJ.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole du joueur :");
-            SymboleJ = _scan.nextLine();
+            SymboleJ = _scan.nextLine().substring(0,1);
         }
         System.out.println("\033[37m Choisissez un symbole de l'ordinateur :");
-        String SymboleO = _scan.nextLine();
+        String SymboleO = _scan.nextLine().substring(0,1);
         while (SymboleO.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole de l'odinateur :");
-            SymboleO = _scan.nextLine();
+            SymboleO = _scan.nextLine().substring(0,1);
         }
         ChoixCouleurJcO();
     }
@@ -223,20 +223,20 @@ public class Menu {
 
     private static void ChoixSymboleOcO() {
         System.out.println("\033[37m Choisissez un symbole de l'ordinateur 1 :");
-        String SymboleO1 = _scan.nextLine();
+        String SymboleO1 = _scan.nextLine().substring(0,1);
         while (SymboleO1.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole de l'odinateur 1 :");
-            SymboleO1 = _scan.nextLine();
+            SymboleO1 = _scan.nextLine().substring(0,1);
         }
         System.out.println("\033[37m Choisissez un symbole de l'ordinateur 2 :");
-        String SymboleO2 = _scan.nextLine();
+        String SymboleO2 = _scan.nextLine().substring(0,1);
         while (SymboleO2.isBlank()) {
             System.out.println("\033[31mLe symbole est obligatoire\033[37m");
             System.out.println();
             System.out.println("Choisissez le symbole de l'odinateur 2 :");
-            SymboleO2 = _scan.nextLine();
+            SymboleO2 = _scan.nextLine().substring(0,1);
         }
         ChoixCouleurOcO();
     }
