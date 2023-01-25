@@ -132,6 +132,4 @@ public class Jeu {
     public Case getCase(String Id){
         return plateau[Id.charAt(0)-65][Integer.parseInt(Id.substring(1))-1];
     }
-
-
 }

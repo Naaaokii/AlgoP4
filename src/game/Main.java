@@ -157,6 +157,4 @@ public class Main {
         System.out.println("Tapez 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
     }
-
-
 }
