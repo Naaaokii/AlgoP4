@@ -89,8 +89,23 @@ public class Main {
             System.out.println(String.format("Symbole joueur %d :", idJoueur));
             symbole = scan.nextLine().substring(0,1);
 
-            Scanner scan_ = new Scanner(System.in);
-            System.out.println(String.format("Couleur joueur %d :", idJoueur));
+            couleur = choixCouleur(idJoueur, couleur, "joueur");
+            return new Joueur(symbole, nom, couleur);
+        }
+        else{
+            Scanner scan = new Scanner(System.in);
+            System.out.println(String.format("Symbole joueur ordinateur :"));
+            symbole = scan.nextLine().substring(0,1);
+
+            couleur = choixCouleur(idJoueur, couleur, "ordinateur");
+
+            return new Ia(symbole, "ordinateur" + idJoueur, couleur);
+        }
+    }
+
+    public static String choixCouleur(int idJoueur, String couleur, String ia){
+        Scanner scan_ = new Scanner(System.in);
+            System.out.println(String.format("Couleur " + ia + " %d :", idJoueur));
             System.out.println(String.format("\u001B[31m1- Rouge"));
             System.out.println(String.format("\u001B[33m2- Jaune"));
             System.out.println(String.format("\u001B[34m3- Bleu"));
@@ -103,15 +118,8 @@ public class Main {
                 case "3" -> couleur = "\u001B[34m";
                 case "4" -> couleur = "\u001B[35m";
                 case "5" -> couleur = "\u001B[35m";
-        }
-            return new Joueur(symbole, nom, couleur);
-        }
-        else{
-            Scanner scan = new Scanner(System.in);
-            System.out.println(String.format("Symbole joueur ordinateur :"));
-            symbole = scan.nextLine().substring(0,1);
-            return new Ia(symbole, "ordinateur" + idJoueur);
-        }
+            }
+            return couleur;
     }
 
     public static void afficherPlateau(){

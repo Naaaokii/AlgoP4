@@ -15,8 +15,8 @@ public class Ia extends Joueur {
     private Joueur adversaire;
 
 
-    public Ia(String symbole, String nom) {
-        super(symbole, nom);
+    public Ia(String symbole, String nom, String couleur) {
+        super(symbole, nom, couleur);
         pionsStrategiques = new ArrayList<>();
     }
 
