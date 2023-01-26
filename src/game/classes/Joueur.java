@@ -1,4 +1,4 @@
-package game.classes;
+package src.game.classes;
 
 import java.util.*;
 import java.io.BufferedReader;
@@ -16,9 +16,9 @@ public class Joueur {
     protected int coups = 1;
     protected Pion[] pions;
     protected String symbole;
-    protected String couleur;
     protected Jeu jeu;
     protected String nom;
+    protected String couleur;
     protected List<Case> histoCoups;
 
     public static final String SEPARATEUR = ";";
@@ -35,6 +35,7 @@ public class Joueur {
     public Joueur(String symbole, String nom){
         this(symbole);
         this.nom = nom;
+        //initPions();
     }
 
     public Joueur(String symbole, String nom, String couleur){
@@ -49,10 +50,6 @@ public class Joueur {
 
     public int getCoups() {
         return coups;
-    }
-
-    public int getCoups2() {
-        return coups-1;
     }
 
     /**
@@ -85,12 +82,12 @@ public class Joueur {
         return symbole;
     }
 
-    public String getCouleur() {
-        return couleur;
-    }
-
     public String getNom() {
         return nom;
+    }
+
+    public String getCouleur() {
+        return couleur;
     }
 
     /**
