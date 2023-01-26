@@ -1,8 +1,9 @@
-package src.game.classes;
+package game.classes;
 
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -52,6 +53,10 @@ public class Joueur {
         return coups;
     }
 
+    public int getCoups2() {
+        return coups-1;
+    }
+
     /**
      * Place une pièce dans la grille.
      * @param nColonne Colonne à laquelle placer la pièce.
@@ -86,6 +91,10 @@ public class Joueur {
         return nom;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
     public String getCouleur() {
         return couleur;
     }
@@ -104,4 +113,42 @@ public class Joueur {
         return (char)(Min + (int)(Math.random() * ((Max - Min) + 1)));
     }
 
+    public void enregistrer() throws IOException {
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("joueurs.csv", true)));
+        try {
+            pw.println(this.toString());
+        } finally {
+            pw.close();
+        }
+    }
+
+    public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
+        ArrayList<Joueur> list = new ArrayList<>();
+        try (BufferedReader buf = new BufferedReader(new FileReader("joueurs.csv"))) {
+            String ligne = buf.readLine();
+            while (ligne != null) {
+                String[] tab = ligne.split(SEPARATEUR);
+                Joueur c = new Joueur(tab[1], tab[0]/* , tab[2]*/);
+                c.setNom(tab[0]);
+                /*c.setSymbole(tab[1]);
+                c.setCouleur(tab[2]);*/
+                c.coups = Integer.parseInt(tab[0]);
+                list.add(c);
+                ligne = buf.readLine();
+            }
+        }
+        return list;
+    }
+    
+    @Override
+        public String toString() {
+            StringBuilder build = new StringBuilder();
+            build.append(this.getNom());
+            build.append(SEPARATEUR);
+            build.append(this.getCoups());
+            /*build.append(this.getSymbole());
+            build.append(SEPARATEUR);
+            build.append(this.getCouleur());*/
+            return build.toString();
+        }
 }

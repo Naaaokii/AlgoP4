@@ -38,8 +38,10 @@ public class Main {
         if(joueur2.getCoups() != 21){ // pas match nul
             if(joueur1.getCoups() == joueur2.getCoups()){ // joueur2 gagne quand il a joué autant de coups que joueur1
                 annonceVictoire(joueur2);
+                joueur2.enregistrer();
             }else{
                 annonceVictoire(joueur1);
+                joueur1.enregistrer();
             } 
         }
 
