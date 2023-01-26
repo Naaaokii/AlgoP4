@@ -16,6 +16,7 @@ public class Joueur {
     protected int coups = 1;
     protected Pion[] pions;
     protected String symbole;
+    protected String couleur;
     protected Jeu jeu;
     protected String nom;
     protected List<Case> histoCoups;
@@ -34,6 +35,11 @@ public class Joueur {
     public Joueur(String symbole, String nom){
         this(symbole);
         this.nom = nom;
+    }
+
+    public Joueur(String symbole, String nom, String couleur){
+        this(symbole, nom);
+        this.couleur = couleur;
         initPions();
     }
 
@@ -73,6 +79,10 @@ public class Joueur {
 
     public String getSymbole() {
         return symbole;
+    }
+
+    public String getCouleur() {
+        return couleur;
     }
 
     public String getNom() {

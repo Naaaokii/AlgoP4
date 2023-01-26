@@ -66,8 +66,8 @@ public class Main {
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
 
-        joueur1 = initJoueur(1, "", choix !=3);
-        joueur2 = initJoueur(2, "", choix == 1);
+        joueur1 = initJoueur(1, "","", choix !=3);
+        joueur2 = initJoueur(2, "", "", choix == 1);
     }
 
     public static void annonceVictoire(Joueur gagnant){
@@ -75,7 +75,7 @@ public class Main {
     }
 
 
-    public static Joueur initJoueur(int idJoueur, String symbole, boolean humain){
+    public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
@@ -84,7 +84,23 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
         symbole = scan.nextLine().substring(0,1);
-        return new Joueur(symbole, nom);
+
+        Scanner scan_ = new Scanner(System.in);
+        System.out.println(String.format("Couleur joueur %d :", idJoueur));
+        System.out.println(String.format("\u001B[31m1- Rouge"));
+        System.out.println(String.format("\u001B[33m2- Jaune"));
+        System.out.println(String.format("\u001B[34m3- Bleu"));
+        System.out.println(String.format("\u001B[35m4- Violet"));
+        System.out.println("\033[37m5- Blanc\033[37m");
+        couleur = scan_.nextLine();
+        switch(couleur){
+            case "1" -> couleur = "\u001B[31m";
+            case "2" -> couleur = "\u001B[33m";
+            case "3" -> couleur = "\u001B[34m";
+            case "4" -> couleur = "\u001B[35m";
+            case "5" -> couleur = "\u001B[35m";
+        }
+        return new Joueur(symbole, nom, couleur);
     }
 
     public static void afficherPlateau(){
@@ -100,7 +116,7 @@ public class Main {
                 if(laCase.getPion() == null){
                     affiche = " ";
                 }else{
-                    affiche = laCase.getPion().getSymbole();
+                    affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + "\u001B[0m";
                 } 
                 ligne += " " + affiche + " |";
             }
@@ -136,6 +152,4 @@ public class Main {
         System.out.println("Tapez 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
     }
-
-
 }
