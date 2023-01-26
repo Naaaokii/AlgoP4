@@ -1,11 +1,14 @@
 package src.game;
 import src.game.classes.*;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class Main {
 
@@ -63,8 +66,16 @@ public class Main {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-                    Joueur.lister();
-                    break;
+                    /*Joueur.lister();*/
+                    try (BufferedReader buf = new BufferedReader(new FileReader("joueurs.csv"))) {
+                        String line;
+                        while ((line = buf.readLine()) != null) {
+                            String[] data = line.split(Joueur.SEPARATEUR);
+                            
+                            System.out.println(data[0] + " " + data[1]);
+                        }
+                    }
+                    return;
                 }
             }else{
                 scanner.nextLine();
