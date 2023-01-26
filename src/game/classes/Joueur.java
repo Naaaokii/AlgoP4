@@ -128,12 +128,12 @@ public class Joueur {
             String ligne = buf.readLine();
             while (ligne != null) {
                 String[] tab = ligne.split(SEPARATEUR);
-                Joueur c = new Joueur(tab[1], tab[0]/* , tab[2]*/);
-                c.setNom(tab[0]);
+                Joueur joueur = new Joueur(tab[1], tab[0]/* , tab[2]*/);
+                joueur.setNom(tab[0]);
                 /*c.setSymbole(tab[1]);
                 c.setCouleur(tab[2]);*/
-                c.coups = Integer.parseInt(tab[0]);
-                list.add(c);
+                joueur.coups = Integer.parseInt(tab[0]);
+                list.add(joueur);
                 ligne = buf.readLine();
             }
         }
