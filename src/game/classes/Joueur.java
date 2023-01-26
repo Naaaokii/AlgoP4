@@ -1,4 +1,4 @@
-package game.classes;
+package src.game.classes;
 
 import java.util.*;
 import java.io.BufferedReader;
@@ -89,10 +89,6 @@ public class Joueur {
 
     public String getNom() {
         return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public String getCouleur() {
