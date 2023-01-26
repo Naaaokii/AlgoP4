@@ -18,6 +18,7 @@ public class Joueur {
     protected String symbole;
     protected Jeu jeu;
     protected String nom;
+    protected String couleur;
     protected List<Case> histoCoups;
 
     public static final String SEPARATEUR = ";";
@@ -34,6 +35,12 @@ public class Joueur {
     public Joueur(String symbole, String nom){
         this(symbole);
         this.nom = nom;
+        //initPions();
+    }
+
+    public Joueur(String symbole, String nom, String couleur){
+        this(symbole, nom);
+        this.couleur = couleur;
         initPions();
     }
 
@@ -77,6 +84,10 @@ public class Joueur {
 
     public String getNom() {
         return nom;
+    }
+
+    public String getCouleur() {
+        return couleur;
     }
 
     /**
