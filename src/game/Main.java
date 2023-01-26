@@ -97,7 +97,7 @@ public class Main {
         System.out.println(String.format("\u001B[33m2- Jaune"));
         System.out.println(String.format("\u001B[34m3- Bleu"));
         System.out.println(String.format("\u001B[35m4- Violet"));
-        System.out.println("\033[37m5- Blanc\033[37m");
+        System.out.println(String.format("\033[37m5- Blanc\033[37m"));
         couleur = scan_.nextLine();
         switch(couleur){
             case "1" -> couleur = "\u001B[31m";
