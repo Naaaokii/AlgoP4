@@ -3,13 +3,14 @@ package game.classes;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 
-public class Joueur {
+public class Joueur implements Comparable<Joueur>{
 
     protected static int compteur = 0;
     protected int idJoueur;
@@ -93,6 +94,10 @@ public class Joueur {
         return nom;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
     /**
      * Obtient la dernière case jouée.
      * @return Case du dernier coup.
@@ -129,6 +134,23 @@ public class Joueur {
         }
     }
 
+    public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
+        ArrayList<Joueur> list = new ArrayList<>();
+        try (BufferedReader buf = new BufferedReader(new FileReader("scoreTop10.csv"))) {
+            String ligne = buf.readLine();
+            while (ligne != null) {
+                String[] tab = ligne.split(SEPARATEUR);
+                Joueur joueur = new Joueur(tab[1], tab[0]);
+                joueur.setNom(tab[0]);
+
+                joueur.getCoups();
+                list.add(joueur);
+                ligne = buf.readLine();
+            }
+        }
+        return list;
+    }
+
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
      */
@@ -147,5 +169,13 @@ public class Joueur {
         
         // Renvoyer la chaîne de caractères contenue dans l'objet StringBuilder
         return builder.toString();
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Comparable#compareTo(java.lang.Object)
+     */
+    @Override
+    public int compareTo(Joueur joueur) {
+        return this.getNom().compareTo(joueur.getNom());
     }
 }

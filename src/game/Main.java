@@ -1,7 +1,11 @@
 package game;
 import game.classes.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,7 +15,7 @@ public class Main {
     public static Joueur joueur1;
     public static Joueur joueur2;
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, ParseException{
 
         /*
         Initialisation
@@ -47,7 +51,7 @@ public class Main {
 
     }
 
-    public static void choixMode(){
+    public static void choixMode() throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
         System.out.println("---------- MODE DE JEU -----------");
@@ -61,16 +65,18 @@ public class Main {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-                    
+                    triNom();
+                    choixMode();
                 }
             }else{
                 scanner.nextLine();
                 choix = 0;
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
-
-        joueur1 = initJoueur(1, "","", choix !=3);
-        joueur2 = initJoueur(2, "","", choix == 1);
+        if (choix != 4){
+            joueur1 = initJoueur(1, "","", choix !=3);
+            joueur2 = initJoueur(2, "","", choix == 1);
+        }
     }
 
     public static void annonceVictoire(Joueur gagnant){
@@ -178,5 +184,33 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Tapez 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
+    }
+
+    /**
+     * Permet de trier les contacts par noms dans l'ordre croissant ou non
+     * @param ordre: un entier (1 ou autre pour croissant et 2 pour décroissant)
+     * @throws IOException
+     * Ne renvoie rien
+     * @throws ParseException
+     */
+    private static void triNom() throws IOException, ParseException{
+        try{
+            ArrayList<Joueur> list = Joueur.lister();
+            Collections.sort(list);
+            
+            ArrayList<Joueur> list2 = new ArrayList<>();
+            int cpt = 1;
+            for (Joueur joueur : list) {
+                if (cpt <= 10){
+                    list2.add(joueur);
+                }
+                cpt++;     
+            }
+
+            String str = list2.toString().replaceAll(",", "\n").replaceAll(";", " ");
+            System.out.println(str);
+        }catch (IOException exception){
+            System.out.println("Problème avec le tri par nom");
+        }   
     }
 }
