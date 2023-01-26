@@ -31,7 +31,7 @@ public class PionStrategique extends Pion{
     /**
      * Calcule la valeur stratégique du pion
      * 10pts pour chaque case dispo
-     * 20pts pour chaque case adjacente de la même couleur, (1.5 pour 2 de la même couleur sur une ligne/col/diag).
+     * 20pts pour chaque case adjacente du même symbole, (1.5 pour 2 du même symbole sur une ligne/col/diag).
      * @return La valeur déterminée.
      */
     public int score(){
@@ -47,7 +47,7 @@ public class PionStrategique extends Pion{
     }
 
     /**
-     * Parcourt une direction en partant d'une case, à la recherhce des cases de la même couleur.
+     * Parcourt une direction en partant d'une case, à la recherhce des cases de la même symbole.
      * @param direction Couple de directions qui vont être cherchées. Utiliser les méthodes de classe Direction.
      * @return Le score total des deux sens sd'une direction.
      */
@@ -84,7 +84,7 @@ public class PionStrategique extends Pion{
         Case nextCase = laCase.getVoisins(direction);
         if(nextCase != null){
             if (nextCase.getPion() != null){
-                if(nextCase.getPion().getCouleur().equals(laCase.getPion().getCouleur())){
+                if(nextCase.getPion().getSymbole().equals(laCase.getPion().getSymbole())){
                     score[POINTS]+= PTS_CASE_AMIE; // Pion ami
                     score[ALLIGNEMENT] += 1;
                     score = verifieUnSens(nextCase, direction, score);
@@ -96,7 +96,7 @@ public class PionStrategique extends Pion{
                 if(!plafondAtteint(laCase, direction)){
                     casesAPrendre.add(nextCase);
                     Case sautDeCase = nextCase.getVoisins(direction);
-                    if (sautDeCase != null && sautDeCase.getPion() != null && sautDeCase.getPion().getCouleur().equals(laCase.getPion().getCouleur())){
+                    if (sautDeCase != null && sautDeCase.getPion() != null && sautDeCase.getPion().getSymbole().equals(laCase.getPion().getSymbole())){
                         score[POINTS] += PTS_CASE_AMIE;
                         score[ALLIGNEMENT] += 1;
                     }

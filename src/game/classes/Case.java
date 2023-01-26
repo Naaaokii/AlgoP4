@@ -141,11 +141,11 @@ public class Case {
         return voisins;
     }
 
-    public List<Case> verifieVoisins(String couleur){
+    public List<Case> verifieVoisins(String symbole){
         List<Case> voisinsIdentiques = new ArrayList<>();
 
         for (Case voisin : voisins) {
-            if(voisin.getPion() != null && voisin.getPion().getCouleur().equals(couleur)){
+            if(voisin.getPion() != null && voisin.getPion().getSymbole().equals(symbole)){
                 voisinsIdentiques.add(voisin);
             }
         }
@@ -171,9 +171,9 @@ public class Case {
     }
 
     /**
-     * Parcourt une direction en partant d'une case, à la recherhce des cases de la même couleur.
+     * Parcourt une direction en partant d'une case, à la recherhce des cases de la même symbole.
      * @param direction Couple de directions qui vont être cherchées. Utiliser les méthodes de classe Direction.
-     * @return Le nombre de pièces de la même couleur des deux côtés de la direction.
+     * @return Le nombre de pièces de la même symbole des deux côtés de la direction.
      */
     public int verifie2Sens(String[] direction){
         var score = 0;
@@ -187,12 +187,12 @@ public class Case {
      *
      * @param laCase laCase Case de référence (utilisé pour la récursivité de la fonction).
      * @param direction Direction dans laquelle chercher.
-     * @param score Nombre de pièces de même couleur (sans compter la case de ref).
-     * @return Nombre de pièces de la même couleur dans la direction.
+     * @param score Nombre de pièces de même symbole (sans compter la case de ref).
+     * @return Nombre de pièces de la même symbole dans la direction.
      */
     public int verifieUnSens(Case laCase, String direction, int score){
         Case nextCase = laCase.getVoisins(direction);
-        if(nextCase != null && nextCase.getPion() != null && nextCase.getPion().getCouleur().equals(pion.getCouleur())){
+        if(nextCase != null && nextCase.getPion() != null && nextCase.getPion().getSymbole().equals(pion.getSymbole())){
             score++;
             score = verifieUnSens(nextCase, direction, score);
         }

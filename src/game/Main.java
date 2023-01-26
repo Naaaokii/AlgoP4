@@ -78,7 +78,7 @@ public class Main {
     }
 
 
-    public static Joueur initJoueur(int idJoueur, String couleur, boolean humain){
+    public static Joueur initJoueur(int idJoueur, String symbole, boolean humain){
 
         if(humain){
             Scanner scanner = new Scanner(System.in);
@@ -87,14 +87,14 @@ public class Main {
 
             Scanner scan = new Scanner(System.in);
             System.out.println(String.format("Symbole joueur %d :", idJoueur));
-            couleur = scan.nextLine().substring(0,1);
-            return new Joueur(couleur, nom);
+            symbole = scan.nextLine().substring(0,1);
+            return new Joueur(symbole, nom);
         }
         else{
             Scanner scan = new Scanner(System.in);
             System.out.println(String.format("Symbole joueur ordinateur :"));
-            couleur = scan.nextLine().substring(0,1);
-            return new Ia(couleur, "ordinateur" + idJoueur);
+            symbole = scan.nextLine().substring(0,1);
+            return new Ia(symbole, "ordinateur" + idJoueur);
         }
     }
 
@@ -111,7 +111,7 @@ public class Main {
                 if(laCase.getPion() == null){
                     affiche = " ";
                 }else{
-                    affiche = laCase.getPion().getCouleur();
+                    affiche = laCase.getPion().getSymbole();
                 } 
                 ligne += " " + affiche + " |";
             }
