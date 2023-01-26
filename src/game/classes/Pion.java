@@ -3,7 +3,7 @@ package game.classes;
 public class Pion {
 
     protected Joueur joueur;
-    protected String couleur;
+    protected String symbole;
     protected Case laCase;
 
 
@@ -18,10 +18,10 @@ public class Pion {
 
     public Pion(Joueur joueur){
         this.joueur = joueur;
-        couleur = joueur.getCouleur();
+        symbole = joueur.getSymbole();
     }
 
-    public String getCouleur() {
-        return couleur;
+    public String getSymbole() {
+        return symbole;
     }
 }

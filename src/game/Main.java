@@ -75,7 +75,7 @@ public class Main {
     }
 
 
-    public static Joueur initJoueur(int idJoueur, String couleur, boolean humain){
+    public static Joueur initJoueur(int idJoueur, String symbole, boolean humain){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
@@ -83,8 +83,8 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
-        couleur = scan.nextLine().substring(0,1);
-        return new Joueur(couleur, nom);
+        symbole = scan.nextLine().substring(0,1);
+        return new Joueur(symbole, nom);
     }
 
     public static void afficherPlateau(){
@@ -100,7 +100,7 @@ public class Main {
                 if(laCase.getPion() == null){
                     affiche = " ";
                 }else{
-                    affiche = laCase.getPion().getCouleur();
+                    affiche = laCase.getPion().getSymbole();
                 } 
                 ligne += " " + affiche + " |";
             }

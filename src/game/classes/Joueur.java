@@ -15,24 +15,24 @@ public class Joueur {
     protected int idJoueur;
     protected int coups = 1;
     protected Pion[] pions;
-    protected String couleur;
+    protected String symbole;
     protected Jeu jeu;
     protected String nom;
     protected List<Case> histoCoups;
 
     public static final String SEPARATEUR = ";";
 
-    public Joueur(String couleur){
+    public Joueur(String symbole){
         idJoueur = compteur;
         compteur++;
-        this.couleur = couleur;
+        this.symbole = symbole;
         pions = new Pion[21];
         histoCoups = new ArrayList<>();
         Arrays.fill(pions, new Pion(this));
     }
 
-    public Joueur(String couleur, String nom){
-        this(couleur);
+    public Joueur(String symbole, String nom){
+        this(symbole);
         this.nom = nom;
         initPions();
     }
@@ -71,8 +71,8 @@ public class Joueur {
         Arrays.fill(pions, new Pion(this));
     }
 
-    public String getCouleur() {
-        return couleur;
+    public String getSymbole() {
+        return symbole;
     }
 
     public String getNom() {
