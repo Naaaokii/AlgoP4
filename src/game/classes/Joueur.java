@@ -1,4 +1,4 @@
-package game.classes;
+package src.game.classes;
 
 import java.util.*;
 import java.io.BufferedReader;
