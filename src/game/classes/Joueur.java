@@ -49,6 +49,10 @@ public class Joueur {
         this.jeu = jeu;
     }
 
+    public void setNom(String nom){
+        this.nom = nom;
+    }
+
     public int getCoups() {
         return coups;
     }
