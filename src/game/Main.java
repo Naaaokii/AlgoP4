@@ -1,7 +1,9 @@
 package src.game;
 import src.game.classes.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,7 +13,7 @@ public class Main {
     public static Joueur joueur1;
     public static Joueur joueur2;
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, ParseException{
 
         /*
         Initialisation
@@ -47,7 +49,7 @@ public class Main {
 
     }
 
-    public static void choixMode() throws IOException{
+    public static void choixMode() throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
         System.out.println("---------- MODE DE JEU -----------");
@@ -61,7 +63,8 @@ public class Main {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-                    
+                    Joueur.lister();
+                    break;
                 }
             }else{
                 scanner.nextLine();
