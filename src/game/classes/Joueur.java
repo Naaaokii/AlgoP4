@@ -141,7 +141,7 @@ public class Joueur {
             StringBuilder build = new StringBuilder();
             build.append(this.getNom());
             build.append(SEPARATEUR);
-            build.append(this.getCoups());
+            build.append(this.getCoups2());
             /*build.append(this.getSymbole());
             build.append(SEPARATEUR);
             build.append(this.getCouleur());*/
