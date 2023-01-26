@@ -3,13 +3,14 @@ package game.classes;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 
-public class Joueur {
+public class Joueur implements Comparable<Joueur> {
 
     protected static int compteur = 0;
     protected int idJoueur;
@@ -32,7 +33,7 @@ public class Joueur {
         Arrays.fill(pions, new Pion(this));
     }
 
-    public Joueur(String symbole, String nom){
+    public Joueur(String nom, String symbole){
         this(symbole);
         this.nom = nom;
     }
@@ -45,6 +46,10 @@ public class Joueur {
 
     public void setJeu(Jeu jeu){
         this.jeu = jeu;
+    }
+
+    public void setNom(String nom){
+        this.nom = nom.replaceFirst(".",(nom.charAt(0)+"").toUpperCase());
     }
 
     public int getCoups() {
@@ -129,6 +134,22 @@ public class Joueur {
         }
     }
 
+    public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
+        ArrayList<Joueur> list = new ArrayList<>();
+        try (BufferedReader buf = new BufferedReader(new FileReader("joueurs.csv"))) {
+            String ligne = buf.readLine();
+            while (ligne != null) {
+                String[] tab = ligne.split(SEPARATEUR);
+                Joueur joueur = new Joueur(tab[0], tab[1]);
+                joueur.setNom(tab[0]);
+                joueur.coups = Integer.parseInt(tab[1]);
+                list.add(joueur);
+                ligne = buf.readLine();
+            }
+        }
+        return list;
+    }
+
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
      */
@@ -143,9 +164,16 @@ public class Joueur {
         
         // Ajouter les coups de l'objet suivi du séparateur
         builder.append(getCoups());
-        builder.append(SEPARATEUR);
         
         // Renvoyer la chaîne de caractères contenue dans l'objet StringBuilder
         return builder.toString();
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Comparable#compareTo(java.lang.Object)
+     */
+    @Override
+    public int compareTo(Joueur joueur) {
+        return this.getNom().compareTo(joueur.getNom());
     }
 }
