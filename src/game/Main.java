@@ -38,16 +38,14 @@ public class Main {
         if(joueur2.getCoups() != 21){ // pas match nul
             if(joueur1.getCoups() == joueur2.getCoups()){ // joueur2 gagne quand il a joué autant de coups que joueur1
                 annonceVictoire(joueur2);
-                joueur2.enregistrer();
             }else{
                 annonceVictoire(joueur1);
-                joueur1.enregistrer();
             } 
         }
 
     }
 
-    public static void choixMode() throws IOException{
+    public static void choixMode(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
         System.out.println("---------- MODE DE JEU -----------");
@@ -68,8 +66,8 @@ public class Main {
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
 
-        joueur1 = initJoueur(1, "", "", choix !=3);
-        joueur2 = initJoueur(2, "", "", choix == 1);
+        joueur1 = initJoueur(1, "", null, choix !=3);
+        joueur2 = initJoueur(2, "", null, choix == 1);
     }
 
     public static void annonceVictoire(Joueur gagnant){
@@ -77,17 +75,15 @@ public class Main {
     }
 
 
-    public static Joueur initJoueur(int idJoueur,  String symbole, String couleur, boolean humain) throws IOException{
-        /*Joueur joueur = new Joueur(symbole, couleur);*/
+    public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain){
+
         Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
         String nom = scanner.nextLine();
-        /*joueur.setNom(nom);*/
 
         Scanner scan = new Scanner(System.in);
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
         symbole = scan.nextLine().substring(0,1);
-        /*joueur.setSymbole(symbole);*/
         
         Scanner sca = new Scanner(System.in);
         System.out.println(String.format("Couleur du joueur %d :", idJoueur));
@@ -95,8 +91,6 @@ public class Main {
         System.out.println("\033[36m2- Bleu\033[37m");
         System.out.println("\033[32m3- Vert\033[37m");
         couleur = sca.nextLine().substring(0,1);
-        /*joueur.setCouleur(couleur);
-        joueur.enregistrer();*/
         return new Joueur(symbole, nom, couleur);
     }
 
