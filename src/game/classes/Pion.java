@@ -5,6 +5,7 @@ public class Pion {
     protected Joueur joueur;
     protected String symbole;
     protected Case laCase;
+    protected String couleur;
 
 
     public Case getLaCase(){
@@ -19,10 +20,15 @@ public class Pion {
     public Pion(Joueur joueur){
         this.joueur = joueur;
         symbole = joueur.getSymbole();
+        couleur = joueur.getCouleur();
     }
 
     public String getSymbole() {
         return symbole;
+    }
+
+    public String getCouleur() {
+        return couleur;
     }
 
     public PionStrategique toPionStrategique(){

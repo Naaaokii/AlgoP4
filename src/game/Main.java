@@ -88,7 +88,21 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             System.out.println(String.format("Symbole joueur %d :", idJoueur));
             symbole = scan.nextLine().substring(0,1);
-            return new Joueur(symbole, nom);
+
+            Scanner scan_ = new Scanner(System.in);
+            System.out.println(String.format("Couleur joueur %d :", idJoueur));
+            System.out.println(String.format("r- rouge"));
+            System.out.println(String.format("j- jaune"));
+            System.out.println(String.format("b- bleu"));
+            System.out.println(String.format("v- violet"));
+            String couleur = scan_.nextLine();
+            switch(couleur){
+                case "r" -> couleur = "\u001B[31m";
+                case "j" -> couleur = "\u001B[33m";
+                case "b" -> couleur = "\u001B[34m";
+                case "v" -> couleur = "\u001B[35m";
+            }
+            return new Joueur(symbole, nom, couleur);
         }
         else{
             Scanner scan = new Scanner(System.in);
@@ -111,7 +125,7 @@ public class Main {
                 if(laCase.getPion() == null){
                     affiche = " ";
                 }else{
-                    affiche = laCase.getPion().getSymbole();
+                    affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + "\u001B[0m";
                 } 
                 ligne += " " + affiche + " |";
             }
