@@ -94,7 +94,7 @@ public class Main {
         }
         else{
             Scanner scan = new Scanner(System.in);
-            System.out.println(String.format("Symbole joueur ordinateur :"));
+            System.out.println(String.format("Symbole joueur ordinateur" + idJoueur + ":"));
             symbole = scan.nextLine().substring(0,1);
 
             couleur = choixCouleur(idJoueur, couleur, "ordinateur");
