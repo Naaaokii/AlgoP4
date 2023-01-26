@@ -1,4 +1,4 @@
-package jeu;
+package Joueur;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,15 +8,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+
 import java.text.ParseException;
 
 public class Joueur {
 
     private static final String SEPARATEUR = ";";
 
-    private String prenom;
-    private String couleur;
-    private String niveau;
+    public String prenom;
+    public String forme;
+    public String couleur;
+    public boolean tour;
+    public String coups;
 
     public String getPrenom() {
         return prenom;
@@ -24,6 +27,14 @@ public class Joueur {
     
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public String getForme() {
+        return forme;
+    }
+    
+    public void setForme(String forme) {
+        this.forme = forme;
     }
 
     public String getCouleur() {
@@ -34,16 +45,24 @@ public class Joueur {
         this.couleur = couleur;
     }
 
-    public String getForme() {
-        return niveau;
+    public boolean getTour() {
+        return tour;
     }
     
-    public void setForme(String niveau) {
-        this.niveau = niveau;
+    public void setTour(boolean tour) {
+        this.tour = tour;
+    }
+
+    public String getCoups() {
+        return coups;
+    }
+    
+    public void setCoups(String coups) {
+        this.coups = coups;
     }
 
     public void enregistrer() throws IOException {
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("joueurs.csv", true)));
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Joueurs.csv", true)));
         try {
             pw.println(this.toString());
         } finally {
@@ -53,7 +72,7 @@ public class Joueur {
 
     public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
         ArrayList<Joueur> list = new ArrayList<>();
-        try (BufferedReader buf = new BufferedReader(new FileReader("joueurs.csv"))) {
+        try (BufferedReader buf = new BufferedReader(new FileReader("Joueurs.csv"))) {
             String ligne = buf.readLine();
             while (ligne != null) {
                 String[] tab = ligne.split(SEPARATEUR);
@@ -72,10 +91,6 @@ public class Joueur {
         public String toString() {
             StringBuilder build = new StringBuilder();
             build.append(this.getPrenom());
-            build.append(SEPARATEUR);
-            build.append(this.getCouleur());
-            build.append(SEPARATEUR);
-            build.append(this.getForme());
             return build.toString();
         }
 }

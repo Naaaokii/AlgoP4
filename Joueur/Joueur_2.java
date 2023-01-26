@@ -1,7 +1,7 @@
-package jeu;
-
+package Joueur;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 import java.io.IOException;
 
 public class Joueur_2 {
@@ -20,7 +20,6 @@ public class Joueur_2 {
             prenom = scanner.nextLine();
         }
         c.setPrenom(prenom);
-
         System.out.println("--- Forme ---");
         System.out.println("§ - & - @ - #");
         System.out.print("Saisir la forme du joueur : ");
@@ -32,7 +31,6 @@ public class Joueur_2 {
             forme = scanner.nextLine();
         }
         c.setForme(forme);
-
         System.out.println("-- Couleur --");
         System.out.println("1.Rouge");
         System.out.println("2.Vert");
@@ -46,12 +44,11 @@ public class Joueur_2 {
             System.out.print("Saisir la couleur du joueur : ");
             couleur = scanner.nextLine();
         }
+        c.setCouleur(couleur);
+        c.enregistrer();
         if (couleur.equals(couleur)) {
             System.out.println("Forme et couleur choisie : " + "\033[3" + couleur + "m" + forme + "\033[0m");
         }
-
-        c.setCouleur(couleur);
-        c.enregistrer();
     }
 
     public static boolean isValidForme(String valid) {
