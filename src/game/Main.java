@@ -54,13 +54,14 @@ public class Main {
         System.out.println("| 1- Jouer à deux                |");
         System.out.println("| 2- Jouer face à l'ordi         |");
         System.out.println("| 3- Ordi vs ordi                |");
+        System.out.println("| 4- Lister contacts             |");
         System.out.println("----------------------------------");
         int choix;
         do {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-
+                    
                 }
             }else{
                 scanner.nextLine();
@@ -68,12 +69,12 @@ public class Main {
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
 
-        joueur1 = initJoueur(1, "", "", choix !=3);
+        joueur1 = initJoueur(1, "","", choix !=3);
         joueur2 = initJoueur(2, "", "", choix == 1);
     }
 
     public static void annonceVictoire(Joueur gagnant){
-        System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups() + " coups !");
+        System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups2() + " coups !");
     }
 
 
@@ -87,16 +88,22 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
         symbole = scan.nextLine().substring(0,1);
-        /*joueur.setSymbole(symbole);*/
-        
-        Scanner sca = new Scanner(System.in);
-        System.out.println(String.format("Couleur du joueur %d :", idJoueur));
-        System.out.println("\033[37m1- Blanc\033[37m");
-        System.out.println("\033[36m2- Bleu\033[37m");
-        System.out.println("\033[32m3- Vert\033[37m");
-        couleur = sca.nextLine().substring(0,1);
-        /*joueur.setCouleur(couleur);
-        joueur.enregistrer();*/
+
+        Scanner scan_ = new Scanner(System.in);
+        System.out.println(String.format("Couleur joueur %d :", idJoueur));
+        System.out.println(String.format("\u001B[31m1- Rouge"));
+        System.out.println(String.format("\u001B[33m2- Jaune"));
+        System.out.println(String.format("\u001B[34m3- Bleu"));
+        System.out.println(String.format("\u001B[35m4- Violet"));
+        System.out.println("\033[37m5- Blanc\033[37m");
+        couleur = scan_.nextLine();
+        switch(couleur){
+            case "1" -> couleur = "\u001B[31m";
+            case "2" -> couleur = "\u001B[33m";
+            case "3" -> couleur = "\u001B[34m";
+            case "4" -> couleur = "\u001B[35m";
+            case "5" -> couleur = "\u001B[35m";
+        }
         return new Joueur(symbole, nom, couleur);
     }
 
@@ -149,6 +156,4 @@ public class Main {
         System.out.println("Tapez 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
     }
-
-
 }

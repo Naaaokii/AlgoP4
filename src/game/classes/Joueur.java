@@ -65,6 +65,10 @@ public class Joueur {
         return coups;
     }
 
+    public int getCoups2() {
+        return coups-1;
+    }
+
     /**
      * Place une pièce dans la grille.
      * @param nColonne Colonne à laquelle placer la pièce.
