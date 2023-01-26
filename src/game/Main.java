@@ -54,13 +54,14 @@ public class Main {
         System.out.println("| 1- Jouer à deux                |");
         System.out.println("| 2- Jouer face à l'ordi         |");
         System.out.println("| 3- Ordi vs ordi                |");
+        System.out.println("| 4- Lister contacts             |");
         System.out.println("----------------------------------");
         int choix;
         do {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
                 if (choix == 4){
-
+                    
                 }
             }else{
                 scanner.nextLine();
