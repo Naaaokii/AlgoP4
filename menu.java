@@ -128,7 +128,7 @@ public class Menu {
         joueur22.setCouleur(CouleurJ2);
         joueur11.enregistrer();
         joueur22.enregistrer();
-        
+
         jouerJcJ();
 
 }
@@ -137,7 +137,8 @@ public class Menu {
         Plateau.Tableau();
     }
 
-    private static void JcO() {
+    private static void JcO() throws IOException {
+        Joueur joueur33 = new Joueur();
         System.out.println("\033[37m Saisir le nom du joueur :");
         String joueur = _scan.nextLine();
         while (joueur.isBlank()) {
@@ -146,10 +147,7 @@ public class Menu {
             System.out.println("Saisir le nom du joueur :");
             joueur = _scan.nextLine();
         }
-        ChoixSymboleJcO();
-    }
-    
-    private static void ChoixSymboleJcO() {
+        joueur33.setPrenom(joueur);
         System.out.println("\033[37m Choisissez un symbole du joueur :");
         String SymboleJ = _scan.nextLine().substring(0,1);
         while (SymboleJ.isBlank()) {
@@ -158,6 +156,7 @@ public class Menu {
             System.out.println("Choisissez le symbole du joueur :");
             SymboleJ = _scan.nextLine().substring(0,1);
         }
+        joueur33.setForme(SymboleJ);
         System.out.println("\033[37m Choisissez un symbole de l'ordinateur :");
         String SymboleO = _scan.nextLine().substring(0,1);
         while (SymboleO.isBlank()) {
@@ -172,10 +171,6 @@ public class Menu {
             System.out.println("Choisissez le symbole de l'odinateur :");
             SymboleO = _scan.nextLine().substring(0,1);
         }
-        ChoixCouleurJcO();
-    }
-
-    private static void ChoixCouleurJcO() {
         System.out.println("\033[37m Choisissez la couleur du joueur :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
@@ -194,6 +189,8 @@ public class Menu {
             System.out.println("\033[33m5- Jaune\033[37m");
             CouleurJ = _scan.nextLine();
         }
+        joueur33.setCouleur(CouleurJ);
+        joueur33.enregistrer();
         System.out.println("\033[37m Choisissez la couleur de l'ordinateur :");
         System.out.println("\033[37m1- Blanc\033[37m");
         System.out.println("\033[36m2- Bleu\033[37m");
