@@ -1,13 +1,8 @@
-package game.classes;
+package src.game.classes;
 
 import java.util.*;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
+
+import game.classes.Case;
 
 public class Joueur {
 
@@ -92,5 +87,4 @@ public class Joueur {
 
         return (char)(Min + (int)(Math.random() * ((Max - Min) + 1)));
     }
-
 }

@@ -1,6 +1,7 @@
-package game;
-import game.classes.*;
+package src.game;
 
+import src.game.classes.*;
+import game.classes.*;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -53,6 +54,7 @@ public class Main {
         System.out.println("| 2- Jouer face à l'ordi         |");
         System.out.println("| 3- Ordi vs ordi                |");
         System.out.println("----------------------------------");
+        System.out.print("redirecton vers : ");
         int choix;
         do {
             if(scanner.hasNextInt()){
@@ -77,7 +79,8 @@ public class Main {
 
     public static Joueur initJoueur(int idJoueur, String symbole, boolean humain){
 
-        Scanner scanner = new Scanner(System.in);
+        if(humain){
+            Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
         String nom = scanner.nextLine();
 
@@ -85,6 +88,13 @@ public class Main {
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
         symbole = scan.nextLine().substring(0,1);
         return new Joueur(symbole, nom);
+        }else{
+            Scanner scan = new Scanner(System.in);
+            System.out.println(String.format("Symbole joueur ordinateur :"));
+            symbole = scan.nextLine().substring(0,1);
+            return new Ia(symbole, "ordinateur" + idJoueur);
+        }
+        
     }
 
     public static void afficherPlateau(){
@@ -117,16 +127,26 @@ public class Main {
     public static boolean tour(){
         Scanner scanner = new Scanner(System.in);
         Joueur joueur = jeu.tourJoueur();
+        if(!(joueur instanceof Ia)){
 
-        boolean valide;
-        do {
-            char choixColonne;
+            boolean valide;
             do {
-                System.out.println(String.format("Coup n°%d de %s :", joueur.getCoups(), joueur.getNom()));
-                choixColonne = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
-            }while (choixColonne <'A' || choixColonne > 'G');
-            valide = joueur.placePion(choixColonne);
-        }while (!valide);
+                char choixColonne;
+                do {
+                    System.out.println(String.format("Coup n°%d de %s :", joueur.getCoups(), joueur.getNom()));
+                    choixColonne = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
+                }while (choixColonne <'A' || choixColonne > 'G');
+                valide = joueur.placePion(choixColonne);
+            }while (!valide);
+        }
+        else{ //ICI TEST DU BOT
+
+            Ia j = (Ia)joueur;
+            pause();
+            j.tour();
+            System.out.println(j.getNom() + " place en case " + j.lastCoup().getIdCase());
+        }
+
 
         return jeu.finTour(joueur.lastCoup());
     }

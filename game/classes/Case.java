@@ -3,6 +3,7 @@ package game.classes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import src.game.classes.*;
 
 public class Case {
     Jeu jeu;

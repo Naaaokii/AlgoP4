@@ -1,4 +1,6 @@
-package game.classes;
+package src.game.classes;
+
+import game.classes.Case;
 
 public class Direction {
 
