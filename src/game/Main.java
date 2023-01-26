@@ -97,6 +97,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
         String nom = scanner.nextLine();
+        while (nom.isBlank()){
+            System.out.println(String.format("Nom joueur %d :", idJoueur));
+            nom = scanner.nextLine();
+        }
 
         Scanner scan = new Scanner(System.in);
         System.out.println(String.format("Symbole joueur %d :", idJoueur));
