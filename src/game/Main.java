@@ -71,7 +71,7 @@ public class Main {
     }
 
     public static void annonceVictoire(Joueur gagnant){
-        System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups() + " coups !");
+        System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups2() + " coups !");
     }
 
 
