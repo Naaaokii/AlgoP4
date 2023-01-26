@@ -66,8 +66,8 @@ public class Main {
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
 
-        joueur1 = initJoueur(1, "", null, choix !=3);
-        joueur2 = initJoueur(2, "", null, choix == 1);
+        joueur1 = initJoueur(1, "", "", choix !=3);
+        joueur2 = initJoueur(2, "", "", choix == 1);
     }
 
     public static void annonceVictoire(Joueur gagnant){
@@ -87,10 +87,19 @@ public class Main {
         
         Scanner sca = new Scanner(System.in);
         System.out.println(String.format("Couleur du joueur %d :", idJoueur));
-        System.out.println("\033[37m1- Blanc\033[37m");
-        System.out.println("\033[36m2- Bleu\033[37m");
-        System.out.println("\033[32m3- Vert\033[37m");
-        couleur = sca.nextLine().substring(0,1);
+        System.out.println("\033[31m1- Rouge\033[37m");
+        System.out.println("\033[33m2- Jaune\033[37m");
+        System.out.println("\033[34m3- Bleu\033[37m");
+        System.out.println("\033[35m4- Violet\033[37m");
+        System.out.println("\033[37m5- Blanc\033[37m");
+        couleur = sca.nextLine();
+        switch(couleur){
+            case "1" -> couleur = "\u001B[31m";
+            case "2" -> couleur = "\u001B[33m";
+            case "3" -> couleur = "\u001B[34m";
+            case "4" -> couleur = "\u001B[35m";
+            case "5" -> couleur = "\u001B[37m";
+        }
         return new Joueur(symbole, nom, couleur);
     }
 
@@ -107,7 +116,7 @@ public class Main {
                 if(laCase.getPion() == null){
                     affiche = " ";
                 }else{
-                    affiche = laCase.getPion().getSymbole();
+                    affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + "\u001B[0m";
                 } 
                 ligne += " " + affiche + " |";
             }
