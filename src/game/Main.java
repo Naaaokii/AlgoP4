@@ -163,15 +163,13 @@ public class Main {
                 }while (choixColonne <'A' || choixColonne > 'G');
                 valide = joueur.placePion(choixColonne);
             }while (!valide);
-        }
-        else{ //ICI TEST DU BOT
+        }else{ //ICI TEST DU BOT
 
             Ia j = (Ia)joueur;
             pause();
             j.tour();
             System.out.println(j.getNom() + " place en case " + j.lastCoup().getIdCase());
         }
-
 
         return jeu.finTour(joueur.lastCoup());
     }

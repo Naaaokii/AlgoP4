@@ -98,7 +98,9 @@ public class Joueur {
      * @return Case du dernier coup.
      */
     public Case lastCoup(){
-        if(histoCoups.size() == 0) return null;
+        if(histoCoups.size() == 0){
+            return null;
+        } 
         return histoCoups.get(histoCoups.size()-1);
     }
 
