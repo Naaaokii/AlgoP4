@@ -134,17 +134,19 @@ public class Joueur implements Comparable<Joueur>{
         }
     }
 
-    public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
-        ArrayList<Joueur> list = new ArrayList<>();
+    public static ArrayList<String> lister() throws FileNotFoundException, IOException, ParseException {
+        ArrayList<String> list = new ArrayList<>();
         try (BufferedReader buf = new BufferedReader(new FileReader("scoreTop10.csv"))) {
             String ligne = buf.readLine();
             while (ligne != null) {
                 String[] tab = ligne.split(SEPARATEUR);
-                Joueur joueur = new Joueur(tab[1], tab[0]);
-                joueur.setNom(tab[0]);
-
-                joueur.getCoups();
-                list.add(joueur);
+                String ensemble;
+                if (Integer.parseInt(tab[1]) > 9){
+                    ensemble = tab[0] + " " + tab[1];
+                }else{
+                    ensemble = tab[0] + "  0" + tab[1];
+                }
+                list.add(ensemble);
                 ligne = buf.readLine();
             }
         }
