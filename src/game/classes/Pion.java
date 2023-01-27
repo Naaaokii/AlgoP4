@@ -1,4 +1,4 @@
-package game.classes;
+package src.game.classes;
 
 public class Pion {
 

@@ -1,5 +1,6 @@
-package game;
-import game.classes.*;
+package src.game;
+
+import src.game.classes.*;
 
 import java.io.IOException;
 import java.util.Locale;
