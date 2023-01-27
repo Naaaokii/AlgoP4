@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ConcurrentModificationException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -196,10 +197,28 @@ public class Main {
      */
     private static void triNom() throws IOException, ParseException{
         try{
-            ArrayList<Joueur> list = Joueur.lister();
-            Collections.sort(list);
+            ArrayList<String> list = Joueur.lister();
+            ArrayList<String> listAttente = new ArrayList<>();
+            ArrayList<String> listFinale = new ArrayList<>();
+            for (String string : list){
+                String score = string.substring(string.length() - 2, string.length());
+                listAttente.add(score);
+            }
+            Collections.sort(listAttente);
+            Collections.reverse(listAttente);
 
-            String str = list.toString().replaceAll(",", "\n").replaceAll(";", " ");
+            for (String string : listAttente) {
+                for (String string2 : list) {
+                    String score = string2.substring(string2.length() - 2, string2.length());
+                    if(score.equals(string) ){
+                        listFinale.add(string2);
+                        list.remove(string2);
+                        break;
+                    }
+                }
+            }
+
+            String str = listFinale.toString().replaceAll(",", "\n").replaceAll(";", " ");
             System.out.println(str);
         }catch (IOException exception){
             System.out.println("Problème avec le tri par nom");
