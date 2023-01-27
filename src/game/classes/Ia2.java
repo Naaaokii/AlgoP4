@@ -9,11 +9,37 @@ public class Ia2 extends Joueur{
      */
     public void tour(){
         char choixColonne;
-
-        choixColonne = colonneAleatoire('A', 'G');
-
+        if (Joueur(placePion())) {
+            bloquerJoueur();
+        } else {choixColonne = colonneAleatoire('A', 'G');
         placePion(choixColonne);
+        }
     }
+
+    private void bloquerJoueur(char[][] grille) {
+        // Boucle à travers chaque ligne de la grille
+        for (int i = 0; i < grille.length; i++) {
+            // Boucle à travers chaque colonne de la grille
+            for (int j = 0; j < grille[i].length; j++) {
+                // Vérifie si la case actuelle est occupée par le joueur
+                if (grille[i][j] == 'J') {
+                    // Vérifie si les trois cases suivantes sont également occupées par le joueur
+                    if (j <= grille[i].length - 4 && grille[i][j + 1] == 'J' && grille[i][j + 2] == 'J' && grille[i][j + 3] == 'J') {
+                        // Si oui, bloque le joueur en plaçant un pion à côté de la série de 3 pions
+                        grille[i][j + 4] = 'IA';
+                        return;
+                    }
+                    // Vérifie si les trois cases précédentes sont également occupées par le joueur
+                    if (j >= 3 && grille[i][j - 1] == 'J' && grille[i][j - 2] == 'J' && grille[i][j - 3] == 'J') {
+                        // Si oui, bloque le joueur en plaçant un pion à côté de la série de 3 pions
+                        grille[i][j - 4] = 'IA';
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    
 /**
      * Point d'accès au tour.
      */
@@ -34,4 +60,6 @@ public class Ia2 extends Joueur{
         while (!oi);
         return oi;
     }
+
+
 }
