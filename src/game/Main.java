@@ -56,6 +56,13 @@ public class Main {
 
     }
 
+    /**
+     * @param mode
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     * @throws ParseException
+     */
     public static boolean choixMode(boolean mode) throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
@@ -91,11 +98,21 @@ public class Main {
         return true;
     }
 
+    /**
+     * @param gagnant
+     */
     public static void annonceVictoire(Joueur gagnant){
         System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups2() + " coups !");
     }
 
 
+    /**
+     * @param idJoueur
+     * @param symbole
+     * @param couleur
+     * @param humain
+     * @return
+     */
     public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain){
 
         if(humain){
@@ -121,6 +138,12 @@ public class Main {
         }
     }
 
+    /**
+     * @param idJoueur
+     * @param couleur
+     * @param ia
+     * @return
+     */
     public static String choixCouleur(int idJoueur, String couleur, String ia){
         Scanner scan_ = new Scanner(System.in);
             System.out.println(String.format("Couleur " + ia + " %d :", idJoueur));
@@ -140,6 +163,9 @@ public class Main {
             return couleur;
     }
 
+    /**
+     * 
+     */
     public static void afficherPlateau(){
 
         Case[][] plateau = jeu.getPlateau();
@@ -162,11 +188,17 @@ public class Main {
         System.out.println(lePlateau);
     }
 
+    /**
+     * 
+     */
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    /**
+     * @return
+     */
     public static boolean tour(){
         Scanner scanner = new Scanner(System.in);
         Joueur joueur = jeu.tourJoueur();
@@ -192,6 +224,9 @@ public class Main {
         return jeu.finTour(joueur.lastCoup());
     }
 
+    /**
+     * 
+     */
     public static void pause(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Tapez 'Entrer' pour le prochain coup");
