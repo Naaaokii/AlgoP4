@@ -74,6 +74,7 @@ public class Main {
         System.out.println("| q- Quitter                     |");
         System.out.println("----------------------------------");
         int choix;
+        int level = 0;
         do {
             if(scanner.hasNextInt()){
                 choix = scanner.nextInt();
@@ -81,6 +82,13 @@ public class Main {
                     System.out.println("\n");
                     triNom();
                     choixMode(true);
+                }else if (choix == 2){
+                    System.out.println("----------- Level IA ------------");
+                    System.out.println("| 1- Facile                      |");
+                    System.out.println("| 2- Difficile                   |");
+                    System.out.println("----------------------------------");  
+                    Scanner scan = new Scanner(System.in);
+                    level = scanner.nextInt();
                 }
             }else{
                 String coco = scanner.nextLine();
@@ -92,8 +100,8 @@ public class Main {
             }
         }while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
         if (choix != 4){
-            joueur1 = initJoueur(1, "","", choix !=3);
-            joueur2 = initJoueur(2, "","", choix == 1);
+            joueur1 = initJoueur(1, "","", choix !=3, level);
+            joueur2 = initJoueur(2, "","", choix == 1, level);
         }
         return true;
     }
@@ -113,7 +121,7 @@ public class Main {
      * @param humain
      * @return
      */
-    public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain){
+    public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain, int level){
 
         if(humain){
             Scanner scanner = new Scanner(System.in);
@@ -134,7 +142,7 @@ public class Main {
 
             couleur = choixCouleur(idJoueur, couleur, "ordinateur");
 
-            return new Ia(symbole, "ordinateur" + idJoueur, couleur);
+            return new Ia(symbole, "ordinateur" + idJoueur, couleur, level);
         }
     }
 
@@ -251,8 +259,7 @@ public class Main {
                 listAttente.add(score);
             }
             Collections.sort(listAttente);
-            Collections.reverse(listAttente);
-
+            
             for (String string : listAttente) {
                 for (String string2 : list) {
                     String score = string2.substring(string2.length() - 2, string2.length());

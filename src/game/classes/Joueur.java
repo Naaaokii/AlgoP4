@@ -166,8 +166,7 @@ public class Joueur implements Comparable<Joueur>{
         builder.append(SEPARATEUR);
         
         // Ajouter les coups de l'objet suivi du séparateur
-        builder.append(getCoups());
-        builder.append(SEPARATEUR);
+        builder.append(getCoups2());
         
         // Renvoyer la chaîne de caractères contenue dans l'objet StringBuilder
         return builder.toString();

@@ -10,22 +10,32 @@ public class Ia extends Joueur {
         return pionsStrategiques;
     }
 
+    private int level;
+
     private List<PionStrategique> pionsStrategiques;
     private List<PionStrategique> pionsAdversaires = new ArrayList<>();
     private Joueur adversaire;
 
 
-    public Ia(String symbole, String nom, String couleur) {
+    public Ia(String symbole, String nom, String couleur, int level) {
         super(symbole, nom, couleur);
+        this.level = level;
         pionsStrategiques = new ArrayList<>();
     }
+
+    public int getLevel(){
+        return level;
+    }
+
 
     /**
      * Ajout de le dernier pion adversaire à la watchlist.
      */
     public void ajoutDernierCoupAdversaire(){
         Case lastCoupAdversaire = adversaire.lastCoup();
-        if(lastCoupAdversaire != null) pionsAdversaires.add(lastCoupAdversaire.getPion().toPionStrategique());
+        if(lastCoupAdversaire != null){
+            pionsAdversaires.add(lastCoupAdversaire.getPion().toPionStrategique());
+        } 
     }
 
     /**
@@ -44,20 +54,24 @@ public class Ia extends Joueur {
     public void tour(){
         char choixColonne;
 
-        if(coups==1) setAdversaire();
+        if (getLevel() == 1){
+            choixColonne = colonneAleatoire('A', 'G');
+        }else{
+            if(coups==1) setAdversaire();
 
-        //Ajoute le dernier coup de l'adversaire dans la watchlist de ses pièces stratégiques.
-        ajoutDernierCoupAdversaire();
+            //Ajoute le dernier coup de l'adversaire dans la watchlist de ses pièces stratégiques.
+            ajoutDernierCoupAdversaire();
 
-        //Debut du match : Pions au hasard dans les cases centrales.
-        if(coups <= 2){
-            choixColonne = colonneAleatoire('C', 'E');
-        }
-        // Puis détermine la meilleure case, en fonction du jeu actuel.
-        else {
-            refreshValeursStrategiques(pionsStrategiques);
-            refreshValeursStrategiques(pionsAdversaires);
-            choixColonne = choixStrategie();
+            //Debut du match : Pions au hasard dans les cases centrales.
+            if(coups <= 2){
+                choixColonne = colonneAleatoire('C', 'E');
+            }
+            // Puis détermine la meilleure case, en fonction du jeu actuel.
+            else {
+                refreshValeursStrategiques(pionsStrategiques);
+                refreshValeursStrategiques(pionsAdversaires);
+                choixColonne = choixStrategie();
+            }
         }
         placePion(choixColonne);
     }
