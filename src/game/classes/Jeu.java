@@ -115,7 +115,7 @@ public class Jeu {
     }
 
     /**
-     * Clos le trour en vérifiant si un joueur a gagné.
+     * Clos le tour en vérifiant si un joueur a gagné.
      * @param caseJouee Case jouée lors du tour.
      * @return True si victoire, false sinon.
      */
