@@ -80,7 +80,7 @@ public class Main {
     public static Joueur initJoueur(int idJoueur, String symbole, boolean humain){
 
         if(humain){
-            Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println(String.format("Nom joueur %d :", idJoueur));
         String nom = scanner.nextLine();
 
@@ -93,8 +93,7 @@ public class Main {
             System.out.println(String.format("Symbole joueur ordinateur :"));
             symbole = scan.nextLine().substring(0,1);
             return new Ia(symbole, "ordinateur" + idJoueur);
-        }
-        
+        }  
     }
 
     public static void afficherPlateau(){

@@ -1,7 +1,7 @@
 package src.game.classes;
 
-public class Ia extends Joueur{
-    public Ia(String symbole, String nom) {
+public class Ia2 extends Joueur{
+    public Ia2(String symbole, String nom) {
         super(symbole, nom);
     }
  /**
