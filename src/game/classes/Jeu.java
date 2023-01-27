@@ -16,9 +16,20 @@ public class Jeu {
     private Joueur joueur2;
 
 
+    /**
+     * Renvoie le premier joueur
+     * @return  joueur 1
+     * @author Dounya
+     */
     public Joueur getJoueur1() {
         return joueur1;
     }
+
+    /**
+     * Renvoie le second joueur
+     * @return joueur 2
+     * @author Dounya
+     */
     public Joueur getJoueur2() {
         return joueur2;
     }
@@ -27,6 +38,11 @@ public class Jeu {
     // Tour
     private int tour = 0;
 
+    /**
+     * @param joueur1
+     * @param joueur2
+     * @author Dounya
+     */
     public Jeu(Joueur joueur1, Joueur joueur2){
         plateau = new Case[NB_COLONNES][NB_LIGNES];
         this.joueur1 = joueur1;
@@ -34,15 +50,27 @@ public class Jeu {
         InitialiserPlateau();
     }
 
+    /**
+     * @author Dounya
+     */
     public Jeu(){
         plateau = new Case[NB_COLONNES][NB_LIGNES];
         InitialiserPlateau();
     }
 
+    /**
+     * Renvoie le tour
+     * @return int
+     * @author Dounya
+     */
     public int getTour() {
         return tour;
     }
 
+    /**
+     * Ne renvoie
+     * @author Jordan
+     */
     public void InitialiserPlateau(){
         for (int colonne = 0; colonne <=6; colonne++){
             for (int ligne=1; ligne<=6; ligne++){
@@ -63,6 +91,7 @@ public class Jeu {
     /**
      * Retourne la plateau du jeu.
      * @return Case[Colonne][Ligne]
+     * @author Jordan
      */
     public Case[][] getPlateau(){
         return plateau;
@@ -72,6 +101,7 @@ public class Jeu {
      * @param colonne L'id de la colonne de 0 à 6.
      * @param ligne L'id de la ligne de 0 à 5.
      * @return la case concernée.
+     * @author Jordan 
      */
     public Case getCase(int colonne, int ligne){
         return plateau[colonne][ligne];
@@ -81,6 +111,7 @@ public class Jeu {
      * @param colonne Charactère réel de A à G (de gauche à droite)
      * @param ligne Ligne réelle de 1 à 6 (de bas en haut)
      * @return la case concernée.
+     * @author Jordan
      */
     public Case getCase(char colonne, int ligne){
         return plateau[colonne-65][ligne-1];
@@ -90,6 +121,7 @@ public class Jeu {
      * Détermine la première case disponble sur une colonne.
      * @param nColonne Colonne sur laquelle vérifier.
      * @return Première case disponible, ou null si aucune dispo.
+     * @author Eloi
      */
     public Case caseDispo(char nColonne){ // Alléger ?
         boolean libre = false;
@@ -118,6 +150,7 @@ public class Jeu {
      * Clos le tour en vérifiant si un joueur a gagné.
      * @param caseJouee Case jouée lors du tour.
      * @return True si victoire, false sinon.
+     * @author Eloi
      */
     public boolean finTour(Case caseJouee){ // Reprendre la case jouée dans la procédure ?
         return caseJouee.compteAllignements() == 3;
@@ -128,6 +161,7 @@ public class Jeu {
      * Retourne la case à partir d'un identifiant.
      * @param Id Identifiant (A1 .. G6)
      * @return Case
+     * @author Jordan
      */
     public Case getCase(String Id){
         return plateau[Id.charAt(0)-65][Integer.parseInt(Id.substring(1))-1];

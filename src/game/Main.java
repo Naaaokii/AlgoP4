@@ -15,6 +15,12 @@ public class Main {
     public static Joueur joueur1;
     public static Joueur joueur2;
 
+    /**
+     * @param args
+     * @throws IOException
+     * @throws ParseException
+     * @author Eloi
+     */
     public static void main(String[] args) throws IOException, ParseException{
 
         /*
@@ -62,6 +68,7 @@ public class Main {
      * @throws FileNotFoundException
      * @throws IOException
      * @throws ParseException
+     * @author Benjamin
      */
     public static boolean choixMode(boolean mode) throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
@@ -108,6 +115,7 @@ public class Main {
 
     /**
      * @param gagnant
+     * @author Eloi
      */
     public static void annonceVictoire(Joueur gagnant){
         System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups2() + " coups !");
@@ -120,6 +128,7 @@ public class Main {
      * @param couleur
      * @param humain
      * @return
+     * @author Eloi
      */
     public static Joueur initJoueur(int idJoueur, String symbole, String couleur, boolean humain, int level){
 
@@ -151,6 +160,7 @@ public class Main {
      * @param couleur
      * @param ia
      * @return
+     * @author Benjamin
      */
     public static String choixCouleur(int idJoueur, String couleur, String ia){
         Scanner scan_ = new Scanner(System.in);
@@ -172,7 +182,8 @@ public class Main {
     }
 
     /**
-     * 
+     * Ne renvoie rien
+     * @author Jordan
      */
     public static void afficherPlateau(){
 
@@ -197,7 +208,8 @@ public class Main {
     }
 
     /**
-     * 
+     * Ne renvoie rien
+     * @author Eloi
      */
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
@@ -206,6 +218,7 @@ public class Main {
 
     /**
      * @return
+     * @author Eloi
      */
     public static boolean tour(){
         Scanner scanner = new Scanner(System.in);
@@ -233,7 +246,8 @@ public class Main {
     }
 
     /**
-     * 
+     * Ne renvoie rien
+     * @author Eloi
      */
     public static void pause(){
         Scanner scanner = new Scanner(System.in);
@@ -247,6 +261,7 @@ public class Main {
      * @throws IOException
      * Ne renvoie rien
      * @throws ParseException
+     * @author Eloi
      */
     private static void triNom() throws IOException, ParseException{
         try{

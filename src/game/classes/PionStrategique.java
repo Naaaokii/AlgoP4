@@ -14,15 +14,28 @@ public class PionStrategique extends Pion{
     public static final int ALLIGNEMENT = 2;
 
 
+    /**
+     * @param joueur
+     * @param laCase
+     * @author Eloi
+     */
     public PionStrategique(Joueur joueur, Case laCase) {
         super(joueur);
         setLaCase(laCase);
     }
 
+    /**
+     * @return valeur
+     * @author Eloi
+     */
     public int getValeur() {
         return valeur;
     }
 
+    /**
+     * @return
+     * @author Eloi
+     */
     public List<Case> getCasesAPrendre() {
         return casesAPrendre;
     }
@@ -33,6 +46,7 @@ public class PionStrategique extends Pion{
      * 10pts pour chaque case dispo
      * 20pts pour chaque case adjacente du même symbole, (1.5 pour 2 du même symbole sur une ligne/col/diag).
      * @return La valeur déterminée.
+     * @author Eloi
      */
     public int score(){
         this.casesAPrendre.clear();
@@ -50,6 +64,7 @@ public class PionStrategique extends Pion{
      * Parcourt une direction en partant d'une case, à la recherhce des cases de la même symbole.
      * @param direction Couple de directions qui vont être cherchées. Utiliser les méthodes de classe Direction.
      * @return Le score total des deux sens sd'une direction.
+     * @author Eloi
      */
     public int[] verifie2Sens(Case laCase, String[] direction){
         int[] score2Sens = {0, 0, 0};
@@ -79,6 +94,7 @@ public class PionStrategique extends Pion{
      *              2è valeur : -1 si mur/pion ennemie.
      *              3è Valeur : Nombre de pions amies rencontrées.     *
      * @return Données de scoring.
+     * @author Eloi
      */
     public int[] verifieUnSens(Case laCase, String direction, int[] score){
         Case nextCase = laCase.getVoisins(direction);
@@ -116,6 +132,7 @@ public class PionStrategique extends Pion{
      *
      * @param laCase
      * @return True si le plafond est atteint (pas d'allignement colonne possible), fale sinon.
+     * @author Eloi
      */
     private boolean plafondAtteint(Case laCase, String direction){
         if (direction.equals(Direction.HAUT) && laCase.idLigne() >= 3){

@@ -24,6 +24,10 @@ public class Joueur implements Comparable<Joueur>{
 
     public static final String SEPARATEUR = ";";
 
+    /**
+     * @param symbole
+     * @author Eloi
+     */
     public Joueur(String symbole){
         idJoueur = compteur;
         compteur++;
@@ -33,25 +37,49 @@ public class Joueur implements Comparable<Joueur>{
         Arrays.fill(pions, new Pion(this));
     }
 
+    /**
+     * @param symbole
+     * @param nom
+     * @author Eloi
+     */
     public Joueur(String symbole, String nom){
         this(symbole);
         this.nom = nom;
     }
 
+    /**
+     * @param symbole un str
+     * @param nom un str
+     * @param couleur un str
+     * @author Eloi
+     */
     public Joueur(String symbole, String nom, String couleur){
         this(symbole, nom);
         this.couleur = couleur;
         initPions();
     }
 
+    /**
+     * @param jeu
+     * @author Dounya
+     */
     public void setJeu(Jeu jeu){
         this.jeu = jeu;
     }
 
+    /**
+     * @return coups
+     * @author Dounya
+     */
     public int getCoups() {
         return coups;
     }
 
+
+    /**
+     * @return coups - 1
+     * @author Dounya
+     */
     public int getCoups2() {
         return coups - 1;
     }
@@ -60,6 +88,7 @@ public class Joueur implements Comparable<Joueur>{
      * Place une pièce dans la grille.
      * @param nColonne Colonne à laquelle placer la pièce.
      * @return true si pion placé, false si pas de case dispo.
+     * @author Eloi
      */
     public boolean placePion(char nColonne){
 
@@ -74,26 +103,51 @@ public class Joueur implements Comparable<Joueur>{
         return false;
     }
     
+    /**
+     * Ne renvoie rien
+     * @author Eloi
+     */
     public void placePion(){
         placePion(colonneAleatoire('A', 'G'));
     }
 
+    /**
+     * Ne renvoie rien
+     * @author Eloi
+     */
     public void initPions(){
         Arrays.fill(pions, new Pion(this));
     }
 
+    /**
+     * @return symbole
+     * @author Dounya
+     */
     public String getSymbole() {
         return symbole;
     }
 
+    /**
+     * @return couleur
+     * @author Dounya
+     */
     public String getCouleur() {
         return couleur;
     }
 
+    /**
+     * @return nom
+     * @author Dounya
+     */
     public String getNom() {
         return nom;
     }
 
+    /**
+     * Ne renvoie rien
+     * @param nom
+     * @author Dounya
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -101,6 +155,7 @@ public class Joueur implements Comparable<Joueur>{
     /**
      * Obtient la dernière case jouée.
      * @return Case du dernier coup.
+     * @author Eloi
      */
     public Case lastCoup(){
         if(histoCoups.size() == 0){
@@ -109,6 +164,13 @@ public class Joueur implements Comparable<Joueur>{
         return histoCoups.get(histoCoups.size()-1);
     }
 
+    /**
+     * Renvoie un caractere aléatoire
+     * @param Min
+     * @param Max
+     * @return un caractère aléatoire entre "A" et "G"
+     * @author Eloi
+     */
     protected char colonneAleatoire(char Min, char Max){
 
         return (char)(Min + (int)(Math.random() * ((Max - Min) + 1)));
@@ -119,6 +181,7 @@ public class Joueur implements Comparable<Joueur>{
      * Permet d'inscrire les 10 meilleurs joueurs dans le fichier csv
      * @throws IOException
      * Ne renvoie rien
+     * @author Benjamin
      */
     public void sauvegarderTop10() throws IOException { //exception fichier 
         
@@ -134,6 +197,14 @@ public class Joueur implements Comparable<Joueur>{
         }
     }
 
+    /**
+     * Permet de lister les contacts
+     * @return Arraylist<String>
+     * @throws FileNotFoundException
+     * @throws IOException
+     * @throws ParseException
+     * @author Benjamin
+     */
     public static ArrayList<String> lister() throws FileNotFoundException, IOException, ParseException {
         ArrayList<String> list = new ArrayList<>();
         try (BufferedReader buf = new BufferedReader(new FileReader("scoreTop10.csv"))) {

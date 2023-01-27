@@ -20,10 +20,20 @@ public class Direction {
     public static final String DIAGONALE_2 = "DIAGONALE_2";
 
 
+    /**
+     * Ligne horizontale de gauche à droite
+     * @return Le couple de directions Gauche Droite
+     * @author Eloi
+     */
     public static String[] HORIZONTAL(){
         return new String[]{GAUCHE, DROITE};
     }
 
+    /**
+     * Ligne verticale de bas en haut
+     * @return Le couple de directions Bas Haut
+     * @author Eloi
+     */
     public static String[] VERTICAL(){
         return new String[] {BAS, HAUT};
     }
@@ -31,6 +41,7 @@ public class Direction {
     /**
      * Diagonale allant du haut à gauche au bas à droite.
      * @return Le couple de directions Haut-Gauche Bas-Droite
+     * @author Eloi
      */
     public static String[] DIAGONALE_1(){
         return new String[] {HAUT_GAUCHE, BAS_DROITE};
@@ -39,6 +50,7 @@ public class Direction {
     /**
      * Diagonale allant du bas gauche au haut droite.
      * @return Le couple de directions Bas-Gauche Haut-Droite
+     * @author Eloi
      */
     public static String[] DIAGONALE_2() {
         return new String[]{BAS_GAUCHE, HAUT_DROITE};
@@ -48,6 +60,7 @@ public class Direction {
      * Directions acceptées : HORIZONTAL, VERTICAL, DIAGONALE_1, DIAGONALE_2
      * @param axe Le String d'une axe
      * @return Le couple de directions associé.
+     * @author Eloi
      */
     public static String[] getDirections (String axe){
         axe = axe.toUpperCase();
@@ -78,8 +91,9 @@ public class Direction {
     }
 
     /**
-     * Retourne toutes les directions (Horizontal, ...)
+     * Retourne toutes les directions (Horizontal, Vertical, ...)
      * @return Array de directions.
+     * @author Eloi
      */
     public static String[] getAxes(){
         return new String[]{"HORIZONTAL", "VERTICAL", "DIAGONALE_1", "DIAGONALE_2"};
@@ -91,6 +105,7 @@ public class Direction {
      * @param caseReference Case de référence
      * @param caseComparee Case à laquelle comparer
      * @return Direction, null si pas voisin.
+     * @author Eloi
      */
     public static String compareCase(Case caseReference, Case caseComparee){
         int diffColonne = caseReference.idColonne()-caseComparee.idColonne();

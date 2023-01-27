@@ -17,12 +17,25 @@ public class Ia extends Joueur {
     private Joueur adversaire;
 
 
+    /**
+     * @param symbole
+     * @param nom
+     * @param couleur
+     * @param level
+     * @author Eloi
+     */
     public Ia(String symbole, String nom, String couleur, int level) {
         super(symbole, nom, couleur);
         this.level = level;
         pionsStrategiques = new ArrayList<>();
     }
 
+
+    /**
+     * Renvoie le level de l'Ia
+     * @return level
+     * @author Dounya
+     */
     public int getLevel(){
         return level;
     }
@@ -30,6 +43,8 @@ public class Ia extends Joueur {
 
     /**
      * Ajout de le dernier pion adversaire à la watchlist.
+     * Ne renvoie rien
+     * @author Eloi
      */
     public void ajoutDernierCoupAdversaire(){
         Case lastCoupAdversaire = adversaire.lastCoup();
@@ -40,6 +55,8 @@ public class Ia extends Joueur {
 
     /**
      * Ajoute l'adversaire, c-à-d l'autre joueur de Jeu.
+     * Ne renvoie rien
+     * @author Eloi
      */
     private void setAdversaire(){
         if(jeu.getJoueur1() == this){
@@ -50,6 +67,8 @@ public class Ia extends Joueur {
 
     /**
      * Pilotage d'un tour du jeu.
+     * Ne renvoie rien
+     * @author Eloi
      */
     public void tour(){
         char choixColonne;
@@ -79,6 +98,7 @@ public class Ia extends Joueur {
     /**
      * Détermine s'il vaut mieux se défendre (en cas de défaite imminente) ou attaquer.
      * @return Colonne à laquelle il vaut mieux placer le pion.
+     * @author Eloi
      */
     public char choixStrategie(){
         char meilleurCoupAdverse = caseLaPlusStrat(pionsAdversaires);
@@ -96,6 +116,7 @@ public class Ia extends Joueur {
      * Si une case à conquérir est à portée, la choisit.
      * Sinon, choisit la case dont la portée est la plus proche parmi ces trois cases.
      * @return Char représentant la colonne la plus stratégique à jouer.
+     * @author Eloi
      */
     private char caseLaPlusStrat(List<PionStrategique> listePionsStrategiques){
 
@@ -156,6 +177,7 @@ public class Ia extends Joueur {
      * @param caseRef Case de référence
      * @param caseATester Case à tester.
      * @return True si blocage des deux côtés de l'axe, false sinon.
+     * @author Eloi
      */
     public boolean verifieSiBloque(Case caseRef, Case caseATester) {
         Case caseDispo = jeu.caseDispo(caseATester.idColonne()); // Pas  utile (déjà testé dans caseLaPlusStrat)
@@ -179,6 +201,7 @@ public class Ia extends Joueur {
 
     /**
      * Point d'accès au tour.
+     * @author Eloi
      */
     @Override
     public void placePion(){
@@ -189,6 +212,7 @@ public class Ia extends Joueur {
      * Place le pion choisi la grille.
      * @param nColonne Colonne à laquelle placer le pion.
      * @return True si la pièce a pu être placée, false sinon
+     * @author Eloi
      */
     @Override
     public boolean placePion(char nColonne) {
@@ -209,6 +233,7 @@ public class Ia extends Joueur {
      * Simule le placement d'une pièce de l'adversaire.
      * @param nColonne Colonne où placer une "faux pion"
      * @return True si victoire de l'adversaire, sinon False.
+     * @author Eloi
      */
     private boolean verifieVictoire(char nColonne, Joueur joueurATester){
         Case caseDispo = jeu.caseDispo(nColonne);
@@ -221,6 +246,7 @@ public class Ia extends Joueur {
     /**
      * Simule le placement d'un pion de l'adversaire sans la physique du pion qui tombe (sans tester les cases inférieures)
      * @return True si victoire de l'adversaire, sinon False.
+     * @author Eloi
      */
     private boolean testeVictoire(Case laCase, Joueur joueurATester){
         Pion fauxPion = new Pion(joueurATester);
@@ -234,6 +260,8 @@ public class Ia extends Joueur {
      * Rafraichit la liste des pions stratégie :
      * Actualise les valeurs de chaque pion
      * Enlève les pions de valeur 0
+     * Ne renvoie
+     * @author Eloi
      */
     private void refreshValeursStrategiques(List<PionStrategique> listePionsStrategiques){
         List<PionStrategique> aEnlever = new ArrayList<>();
