@@ -1,5 +1,5 @@
-package src.game;
-import src.game.classes.*;
+package game;
+import game.classes.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

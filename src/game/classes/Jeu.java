@@ -1,4 +1,4 @@
-package src.game.classes;
+package game.classes;
 
 public class Jeu {
     /*
